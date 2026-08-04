@@ -7,27 +7,27 @@
   <meta name="description" content="先着100名さま限定。8/24〜8/26の3日間、「増やす」の前に「わかる」から始める集中投資講座。通常9,800円が0円。">
   <style>
     /* ============================================================
-       CSS VARIABLES — ABCash Color System
-       ネイビー×テラコッタ×くすみゴールド×オフホワイト（純赤・蛍光・原色NG）
+       CSS VARIABLES — Merone Brand Colors（薄ブルー×ネイビー×スモーキーピンク・最優先ルール準拠）
+       ※変数名は旧名のまま: terra系=スモーキーピンク / gold系=ライトブルー
     ============================================================ */
     :root {
       --white:          #ffffff;
-      --bg-soft:        #faf7f2;
-      --bg-section-alt: #f4eee4;
-      --bg-warm-light:  #f7f1e8;
-      --navy-main:      #1F3A5F;
-      --navy-deep:      #16293f;
-      --navy-light:     #e8eef6;
-      --terra-main:     #C25B3F;
-      --terra-soft:     #d2704f;
-      --terra-light:    #f6e3db;
-      --gold-main:      #C9A961;
-      --gold-deep:      #a9873f;
-      --gold-light:     #f3ead5;
-      --text-dark:      #2d2d2d;
-      --text-mid:       #555555;
-      --text-light:     #888888;
-      --border-light:   #e8e2d8;
+      --bg-soft:        #f1f7fb;
+      --bg-section-alt: #eaf3fa;
+      --bg-warm-light:  #fbeef1;
+      --navy-main:      #26405f;
+      --navy-deep:      #1d3149;
+      --navy-light:     #e3eef7;
+      --terra-main:     #bd7886;
+      --terra-soft:     #cf8f9c;
+      --terra-light:    #fbeef1;
+      --gold-main:      #7fb0d2;
+      --gold-deep:      #5f92b8;
+      --gold-light:     #ddebf5;
+      --text-dark:      #1d3149;
+      --text-mid:       #4a4446;
+      --text-light:     #8a8f96;
+      --border-light:   #dfe9f2;
     }
 
     /* ============================================================
@@ -98,7 +98,7 @@
       border: none;
       cursor: pointer;
       text-decoration: none;
-      box-shadow: 0 4px 18px rgba(194, 91, 63, 0.35);
+      box-shadow: 0 4px 18px rgba(189, 120, 134, 0.35);
       transition: transform 0.18s ease, box-shadow 0.18s ease;
       width: 100%;
       text-align: center;
@@ -106,7 +106,7 @@
     }
     .btn-cta:hover {
       transform: translateY(2px);
-      box-shadow: 0 2px 10px rgba(194, 91, 63, 0.25);
+      box-shadow: 0 2px 10px rgba(189, 120, 134, 0.25);
     }
     .btn-cta .arrow-circle {
       display: inline-flex;
@@ -145,7 +145,7 @@
       color: var(--terra-main);
       margin-bottom: 14px;
       position: relative;
-      box-shadow: 0 2px 8px rgba(194,91,63,0.15);
+      box-shadow: 0 2px 8px rgba(189,120,134,0.15);
     }
     .fukidashi::after {
       content: '';
@@ -186,7 +186,7 @@
 
     /* Placeholder */
     .img-placeholder {
-      background: #f0e9dd;
+      background: #eef4fa;
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -197,7 +197,7 @@
       font-size: 0.78rem;
       text-align: center;
       padding: 20px;
-      border: 2px dashed #d5c8b2;
+      border: 2px dashed #c5d8e8;
     }
 
     /* ============================================================
@@ -243,11 +243,11 @@
       font-weight: 700;
       text-decoration: none;
       white-space: nowrap;
-      box-shadow: 0 3px 12px rgba(194,91,63,0.3);
+      box-shadow: 0 3px 12px rgba(189,120,134,0.3);
       transition: transform 0.18s, box-shadow 0.18s;
       flex-shrink: 0;
     }
-    .header-cta:hover { transform: translateY(1px); box-shadow: 0 2px 8px rgba(194,91,63,0.2); }
+    .header-cta:hover { transform: translateY(1px); box-shadow: 0 2px 8px rgba(189,120,134,0.2); }
 
     /* ============================================================
        2. HERO
@@ -261,7 +261,7 @@
       position: relative;
       width: 100%;
       aspect-ratio: 5/6;
-      background: linear-gradient(135deg, #f4ecdf 0%, #e8eef6 100%);
+      background: linear-gradient(135deg, #fbeef1 0%, #eaf3fa 100%);
       overflow: hidden;
     }
     /* iOS15.4未満向けフォールバック */
@@ -299,7 +299,7 @@
       justify-content: center;
       text-align: center;
       padding: 4px;
-      box-shadow: 0 3px 12px rgba(194,91,63,0.35);
+      box-shadow: 0 3px 12px rgba(189,120,134,0.35);
       z-index: 10;
     }
     .hero-badge .badge-num {
@@ -382,7 +382,7 @@
     .hero-tag-terra {
       background: var(--terra-light);
       color: var(--terra-main);
-      border-color: #e3b7a8;
+      border-color: #e8c3cc;
     }
     .hero-note {
       font-size: 0.68rem;
@@ -514,12 +514,12 @@
       line-height: 1.5;
     }
     .merit-circle-1 {
-      background: linear-gradient(135deg, var(--terra-light), #ecc4b5);
+      background: linear-gradient(135deg, var(--terra-light), #f2ccd6);
       color: var(--terra-main);
       border: 2px solid var(--terra-main);
     }
     .merit-circle-2 {
-      background: linear-gradient(135deg, var(--gold-light), #e2d0a2);
+      background: linear-gradient(135deg, var(--gold-light), #b9d4e8);
       color: var(--gold-deep);
       border: 2px solid var(--gold-main);
     }
@@ -531,7 +531,7 @@
       font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
       font-size: 2.4rem;
       font-weight: 700;
-      background: linear-gradient(90deg, var(--terra-main), var(--gold-deep));
+      background: linear-gradient(90deg, var(--terra-main), var(--navy-main));
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       background-clip: text;
@@ -590,7 +590,7 @@
     .present-card:nth-child(1) .present-num { background: linear-gradient(135deg, var(--terra-soft), var(--terra-main)); }
     .present-card:nth-child(2) .present-num { background: linear-gradient(135deg, var(--gold-main), var(--gold-deep)); }
     .present-card:nth-child(3) .present-num { background: linear-gradient(135deg, #33456a, var(--navy-main)); }
-    .present-card:nth-child(4) .present-num { background: linear-gradient(135deg, #b0784a, #8f5d33); }
+    .present-card:nth-child(4) .present-num { background: linear-gradient(135deg, #c99aa5, #a86a77); }
     .present-body h4 {
       font-size: 0.95rem;
       font-weight: 700;
@@ -721,7 +721,7 @@
     .support-item:nth-child(1) .support-num { background: linear-gradient(135deg, var(--terra-soft), var(--terra-main)); }
     .support-item:nth-child(2) .support-num { background: linear-gradient(135deg, var(--gold-main), var(--gold-deep)); }
     .support-item:nth-child(3) .support-num { background: linear-gradient(135deg, #33456a, var(--navy-main)); }
-    .support-item:nth-child(4) .support-num { background: linear-gradient(135deg, #b0784a, #8f5d33); }
+    .support-item:nth-child(4) .support-num { background: linear-gradient(135deg, #c99aa5, #a86a77); }
     .support-body p {
       font-size: 0.88rem;
       color: var(--text-mid);
@@ -806,7 +806,7 @@
     }
     .overview-limit-box .limit-tag {
       display: inline-block;
-      background: linear-gradient(135deg, var(--terra-soft), var(--gold-deep));
+      background: linear-gradient(135deg, var(--terra-soft), var(--terra-main));
       color: #fff;
       font-size: 0.78rem;
       font-weight: 700;
@@ -845,7 +845,7 @@
       width: 72px;
       height: 72px;
       border-radius: 50%;
-      background: #ece5d8;
+      background: #e6eef5;
       flex-shrink: 0;
       overflow: hidden;
       display: flex;
@@ -999,7 +999,7 @@
        12. FINAL CTA
     ============================================================ */
     .sec-final-cta {
-      background: linear-gradient(135deg, #faf4e8 0%, #eef2f8 50%, #f8ece5 100%);
+      background: linear-gradient(135deg, #eaf3fa 0%, #f1f7fb 50%, #fbeef1 100%);
       text-align: center;
       padding: 64px 0;
       border-top: none;
@@ -1725,7 +1725,7 @@
     <div class="ornament">- - -</div>
     <h2 class="cta-title f-head">
       この夏の終わりに、<br>
-      <span style="background:linear-gradient(90deg,var(--terra-main),var(--gold-deep));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">「お金がわかる私」へ。</span>
+      <span style="background:linear-gradient(90deg,var(--terra-main),var(--navy-main));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">「お金がわかる私」へ。</span>
     </h2>
     <p class="cta-sub">
       先着100名さま限定 0円<br>
