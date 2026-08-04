@@ -1,0 +1,1841 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>おとな女子の3日間集中投資講座（8/24〜8/26）</title>
+  <meta name="description" content="先着100名さま限定。8/24〜8/26の3日間、「増やす」の前に「わかる」から始める集中投資講座。通常9,800円が0円。">
+  <style>
+    /* ============================================================
+       CSS VARIABLES — ABCash Color System
+       ネイビー×テラコッタ×くすみゴールド×オフホワイト（純赤・蛍光・原色NG）
+    ============================================================ */
+    :root {
+      --white:          #ffffff;
+      --bg-soft:        #faf7f2;
+      --bg-section-alt: #f4eee4;
+      --bg-warm-light:  #f7f1e8;
+      --navy-main:      #1F3A5F;
+      --navy-deep:      #16293f;
+      --navy-light:     #e8eef6;
+      --terra-main:     #C25B3F;
+      --terra-soft:     #d2704f;
+      --terra-light:    #f6e3db;
+      --gold-main:      #C9A961;
+      --gold-deep:      #a9873f;
+      --gold-light:     #f3ead5;
+      --text-dark:      #2d2d2d;
+      --text-mid:       #555555;
+      --text-light:     #888888;
+      --border-light:   #e8e2d8;
+    }
+
+    /* ============================================================
+       BASE RESET & TYPOGRAPHY
+    ============================================================ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Yu Gothic", "游ゴシック", "YuGothic", "Hiragino Sans", "ヒラギノ角ゴ Pro", sans-serif;
+      color: var(--text-dark);
+      background: var(--white);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    .f-head {
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+    }
+    .wrap {
+      max-width: 430px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    @media (min-width: 640px) { .wrap { max-width: 640px; } }
+    @media (min-width: 900px) { .wrap { max-width: 760px; } }
+
+    /* ============================================================
+       UTILITY
+    ============================================================ */
+    .navy  { color: var(--navy-main); }
+    .terra { color: var(--terra-main); }
+    .gold  { color: var(--gold-deep); }
+
+    /* ブランドグラデアンダーライン（テラコッタ→ゴールド→ネイビー） */
+    .brand-underline {
+      position: relative;
+      display: inline-block;
+    }
+    .brand-underline::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -3px;
+      width: 100%;
+      height: 3px;
+      border-radius: 2px;
+      background: linear-gradient(90deg,
+        var(--terra-main) 0%,
+        var(--gold-main) 50%,
+        var(--navy-main) 100%
+      );
+    }
+
+    /* ============================================================
+       CTA BUTTON
+    ============================================================ */
+    .btn-cta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: linear-gradient(135deg, var(--terra-soft) 0%, var(--terra-main) 100%);
+      color: #fff;
+      font-family: "Yu Gothic", "游ゴシック", sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 16px 28px;
+      border-radius: 50px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      box-shadow: 0 4px 18px rgba(194, 91, 63, 0.35);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      width: 100%;
+      text-align: center;
+      letter-spacing: 0.03em;
+    }
+    .btn-cta:hover {
+      transform: translateY(2px);
+      box-shadow: 0 2px 10px rgba(194, 91, 63, 0.25);
+    }
+    .btn-cta .arrow-circle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      font-size: 0.9rem;
+      flex-shrink: 0;
+    }
+    .btn-cta-navy {
+      background: linear-gradient(135deg, #33456a 0%, var(--navy-main) 100%);
+      box-shadow: 0 4px 18px rgba(31,58,95,0.3);
+    }
+    .btn-cta-navy:hover {
+      box-shadow: 0 2px 10px rgba(31,58,95,0.2);
+    }
+
+    /* ============================================================
+       SECTION COMMON
+    ============================================================ */
+    section { padding: 56px 0; }
+    section + section { border-top: 1px solid var(--border-light); }
+
+    /* 吹き出し型小見出し */
+    .fukidashi {
+      display: inline-block;
+      background: var(--white);
+      border: 2px solid var(--terra-main);
+      border-radius: 50px;
+      padding: 7px 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--terra-main);
+      margin-bottom: 14px;
+      position: relative;
+      box-shadow: 0 2px 8px rgba(194,91,63,0.15);
+    }
+    .fukidashi::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 28px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 8px 0 8px;
+      border-color: var(--terra-main) transparent transparent transparent;
+    }
+    .fukidashi-navy {
+      border-color: var(--navy-main);
+      color: var(--navy-main);
+    }
+    .fukidashi-navy::after {
+      border-color: var(--navy-main) transparent transparent transparent;
+    }
+    .fukidashi-gold {
+      border-color: var(--gold-main);
+      color: var(--gold-deep);
+    }
+    .fukidashi-gold::after {
+      border-color: var(--gold-main) transparent transparent transparent;
+    }
+
+    /* 英字大見出し */
+    .sec-en-title {
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      color: var(--text-dark);
+      margin: 20px 0 24px;
+      line-height: 1.1;
+    }
+
+    /* Placeholder */
+    .img-placeholder {
+      background: #f0e9dd;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 8px;
+      color: #a99;
+      font-size: 0.78rem;
+      text-align: center;
+      padding: 20px;
+      border: 2px dashed #d5c8b2;
+    }
+
+    /* ============================================================
+       1. HEADER
+    ============================================================ */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid var(--border-light);
+      padding: 10px 0;
+    }
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .site-logo {
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy-main);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      line-height: 1.3;
+    }
+    .site-logo .logo-sub {
+      font-size: 0.68rem;
+      font-weight: 400;
+      color: var(--text-light);
+      display: block;
+      font-family: "Yu Gothic", sans-serif;
+    }
+    .header-cta {
+      font-size: 0.72rem;
+      padding: 9px 14px;
+      border-radius: 50px;
+      background: linear-gradient(135deg, var(--terra-soft), var(--terra-main));
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+      box-shadow: 0 3px 12px rgba(194,91,63,0.3);
+      transition: transform 0.18s, box-shadow 0.18s;
+      flex-shrink: 0;
+    }
+    .header-cta:hover { transform: translateY(1px); box-shadow: 0 2px 8px rgba(194,91,63,0.2); }
+
+    /* ============================================================
+       2. HERO
+    ============================================================ */
+    .hero {
+      background: var(--white);
+      padding: 0;
+      border-top: none;
+    }
+    .hero-img-wrap {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 5/6;
+      background: linear-gradient(135deg, #f4ecdf 0%, #e8eef6 100%);
+      overflow: hidden;
+    }
+    /* iOS15.4未満向けフォールバック */
+    @supports not (aspect-ratio: 5/6) {
+      .hero-img-wrap { height: 0; padding-top: 120%; }
+      .hero-photo { position: absolute; top: 0; left: 0; }
+    }
+    .hero-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      display: block;
+    }
+    .hero-img-wrap::after {
+      content: "";
+      position: absolute;
+      left: 0; right: 0; bottom: 0;
+      height: 34%;
+      background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.55) 55%, #ffffff 100%);
+      pointer-events: none;
+    }
+    .hero-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      background: var(--white);
+      border: 2px solid var(--terra-main);
+      border-radius: 50%;
+      width: 84px;
+      height: 84px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 4px;
+      box-shadow: 0 3px 12px rgba(194,91,63,0.35);
+      z-index: 10;
+    }
+    .hero-badge .badge-num {
+      font-family: "Yu Gothic","YuGothic","游ゴシック",sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--terra-main);
+    }
+    .hero-badge .badge-text {
+      font-size: 0.56rem;
+      color: var(--text-mid);
+      line-height: 1.3;
+      margin-top: 2px;
+    }
+    .hero-img-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      color: #99a;
+      font-size: 0.8rem;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .hero-body {
+      padding: 14px 20px 40px;
+      background: #fff;
+      position: relative;
+      margin-top: -1px;
+      text-align: center;
+    }
+    .hero-partner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--gold-light), var(--navy-light));
+      border-radius: 50px;
+      padding: 6px 16px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--navy-main);
+      margin-bottom: 16px;
+      letter-spacing: 0.04em;
+    }
+    .hero-headline {
+      font-size: 2.5rem;
+      line-height: 1.25;
+      margin-bottom: 10px;
+      letter-spacing: -0.01em;
+      color: var(--navy-deep);
+    }
+    @media (max-width: 380px) { .hero-headline { font-size: 2.1rem; } }
+    .hero-sub {
+      font-size: 1rem;
+      color: var(--text-mid);
+      margin-bottom: 22px;
+      font-weight: 700;
+    }
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 24px;
+      justify-content: center;
+    }
+    .hero-tag {
+      background: var(--navy-light);
+      color: var(--navy-main);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 50px;
+      border: 1px solid #c9d6e8;
+    }
+    .hero-tag-terra {
+      background: var(--terra-light);
+      color: var(--terra-main);
+      border-color: #e3b7a8;
+    }
+    .hero-note {
+      font-size: 0.68rem;
+      color: var(--text-light);
+      margin-top: 10px;
+      text-align: center;
+    }
+
+    /* ============================================================
+       3. WORRIES
+    ============================================================ */
+    .sec-worries { background: var(--bg-soft); }
+    .worries-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 28px 0 24px;
+    }
+    .worries-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--white);
+      border-radius: 12px;
+      padding: 13px 16px;
+      border-left: 3px solid var(--terra-main);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+    .worries-list li .prob-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--terra-main);
+      flex-shrink: 0;
+      margin-top: 7px;
+    }
+    .worries-closing {
+      background: linear-gradient(135deg, var(--gold-light), var(--terra-light));
+      border-radius: 16px;
+      padding: 20px 18px;
+      margin: 8px 0 28px;
+      text-align: center;
+    }
+    .worries-closing p {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 10px;
+    }
+    .worries-closing .accent {
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy-main);
+      line-height: 1.6;
+      display: block;
+    }
+
+    /* ============================================================
+       4. MERIT
+    ============================================================ */
+    .sec-merit { background: var(--white); }
+    .merit-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin: 24px 0 20px;
+    }
+    .merit-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      line-height: 1.65;
+    }
+    .merit-check {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold-main), var(--gold-deep));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .merit-check svg { display: block; }
+    .merit-campaign-box {
+      background: var(--bg-soft);
+      border-radius: 16px;
+      padding: 20px 18px;
+      margin: 20px 0;
+      border: 1px solid var(--border-light);
+    }
+    .merit-campaign-box .camp-title {
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--terra-main);
+      margin-bottom: 10px;
+    }
+    .merit-campaign-box p {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+    .merit-circles {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      margin: 20px 0;
+      flex-wrap: wrap;
+    }
+    .merit-circle {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 14px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+    .merit-circle-1 {
+      background: linear-gradient(135deg, var(--terra-light), #ecc4b5);
+      color: var(--terra-main);
+      border: 2px solid var(--terra-main);
+    }
+    .merit-circle-2 {
+      background: linear-gradient(135deg, var(--gold-light), #e2d0a2);
+      color: var(--gold-deep);
+      border: 2px solid var(--gold-main);
+    }
+    .merit-days {
+      text-align: center;
+      margin: 8px 0 28px;
+    }
+    .merit-days .days-num {
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      font-size: 2.4rem;
+      font-weight: 700;
+      background: linear-gradient(90deg, var(--terra-main), var(--gold-deep));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1.1;
+    }
+    .merit-days .days-sub {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      margin-top: 4px;
+    }
+
+    /* ============================================================
+       5. PRESENT
+    ============================================================ */
+    .sec-present {
+      background: var(--bg-section-alt);
+      background-image:
+        linear-gradient(rgba(31,58,95,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(31,58,95,0.04) 1px, transparent 1px);
+      background-size: 28px 28px;
+    }
+    .present-title-sub {
+      font-size: 0.9rem;
+      color: var(--text-mid);
+      margin-bottom: 24px;
+      line-height: 1.7;
+    }
+    .present-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 4px 0 28px;
+    }
+    .present-card {
+      background: var(--white);
+      border-radius: 16px;
+      padding: 20px 18px;
+      box-shadow: 0 3px 16px rgba(0,0,0,0.06);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .present-num {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+    }
+    .present-card:nth-child(1) .present-num { background: linear-gradient(135deg, var(--terra-soft), var(--terra-main)); }
+    .present-card:nth-child(2) .present-num { background: linear-gradient(135deg, var(--gold-main), var(--gold-deep)); }
+    .present-card:nth-child(3) .present-num { background: linear-gradient(135deg, #33456a, var(--navy-main)); }
+    .present-card:nth-child(4) .present-num { background: linear-gradient(135deg, #b0784a, #8f5d33); }
+    .present-body h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 5px;
+      line-height: 1.45;
+    }
+    .present-body p {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       6. 完走プレゼント企画
+    ============================================================ */
+    .sec-challenge { background: var(--white); }
+    .challenge-eyebrow {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      text-align: center;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--terra-main);
+      letter-spacing: 0.04em;
+      margin-bottom: 12px;
+    }
+    .challenge-eyebrow::before, .challenge-eyebrow::after {
+      content: ""; height: 1px; width: 24px; background: var(--terra-main);
+    }
+    .challenge-headline {
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      text-align: center;
+      font-size: 1.9rem;
+      font-weight: 700;
+      line-height: 1.32;
+      color: var(--navy-deep);
+      margin-bottom: 14px;
+    }
+    @media (max-width: 380px) { .challenge-headline { font-size: 1.62rem; } }
+    .challenge-headline .hl {
+      background: linear-gradient(transparent 56%, var(--gold-light) 56%);
+      padding: 0 3px;
+    }
+    .challenge-lead {
+      text-align: center;
+      font-size: 0.86rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 18px;
+    }
+    .prize-box {
+      border: 2px solid var(--terra-main);
+      border-radius: 16px;
+      padding: 18px;
+      margin: 16px 0 24px;
+      text-align: center;
+    }
+    .prize-box .prize-label {
+      display: inline-block;
+      background: var(--terra-main);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 12px;
+      border-radius: 50px;
+      margin-bottom: 10px;
+      letter-spacing: 0.04em;
+    }
+    .prize-box p {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+    }
+    .prize-box .prize-num {
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--terra-main);
+      display: block;
+      margin: 6px 0;
+    }
+    .challenge-features {
+      display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+      margin: 18px 0 22px;
+    }
+    .challenge-feature {
+      background: var(--white);
+      border: 1px solid var(--gold-main);
+      color: var(--gold-deep);
+      font-size: 0.72rem; font-weight: 700;
+      padding: 6px 13px; border-radius: 50px;
+    }
+
+    /* ============================================================
+       7. SUPPORT
+    ============================================================ */
+    .sec-support { background: var(--bg-soft); }
+    .support-items {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin: 28px 0 28px;
+    }
+    .support-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--white);
+      border-radius: 14px;
+      padding: 16px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .support-num {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0;
+      text-align: center;
+      line-height: 1.2;
+      letter-spacing: 0.02em;
+    }
+    .support-item:nth-child(1) .support-num { background: linear-gradient(135deg, var(--terra-soft), var(--terra-main)); }
+    .support-item:nth-child(2) .support-num { background: linear-gradient(135deg, var(--gold-main), var(--gold-deep)); }
+    .support-item:nth-child(3) .support-num { background: linear-gradient(135deg, #33456a, var(--navy-main)); }
+    .support-item:nth-child(4) .support-num { background: linear-gradient(135deg, #b0784a, #8f5d33); }
+    .support-body p {
+      font-size: 0.88rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+
+    /* ============================================================
+       8. OVERVIEW
+    ============================================================ */
+    .sec-overview { background: var(--white); }
+    .overview-box {
+      background: linear-gradient(135deg, var(--gold-light), var(--navy-light));
+      border-radius: 16px;
+      padding: 22px 20px;
+      margin: 24px 0 20px;
+    }
+    .overview-box .ov-date {
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--navy-main);
+      margin-bottom: 8px;
+    }
+    .overview-box .ov-desc {
+      font-size: 0.82rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+    .schedule-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .schedule-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.85rem;
+      line-height: 1.55;
+      padding: 10px 14px;
+      background: rgba(255,255,255,0.7);
+      border-radius: 10px;
+    }
+    .sched-date {
+      font-weight: 700;
+      color: var(--navy-main);
+      white-space: nowrap;
+      flex-shrink: 0;
+      font-size: 0.8rem;
+      padding-top: 1px;
+    }
+    .sched-content { color: var(--text-mid); }
+    .overview-limit-box {
+      text-align: center;
+      background: var(--white);
+      border: 2px solid var(--terra-main);
+      border-radius: 16px;
+      padding: 22px 18px;
+      margin: 20px 0 28px;
+    }
+    .overview-limit-box .limit-label {
+      font-size: 0.78rem;
+      color: var(--text-light);
+      margin-bottom: 6px;
+    }
+    .overview-limit-box .limit-price {
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      margin-bottom: 6px;
+    }
+    .overview-limit-box .limit-price .original {
+      font-size: 0.88rem;
+      color: var(--text-light);
+      text-decoration: line-through;
+      margin-right: 8px;
+    }
+    .overview-limit-box .limit-price .sale {
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--terra-main);
+    }
+    .overview-limit-box .limit-tag {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--terra-soft), var(--gold-deep));
+      color: #fff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 16px;
+      border-radius: 50px;
+      margin-top: 4px;
+      letter-spacing: 0.04em;
+    }
+
+    /* ============================================================
+       9. SPEAKERS
+    ============================================================ */
+    .sec-speakers { background: var(--bg-soft); }
+    .speakers-lead {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+    .speaker-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+    .speaker-card {
+      display: flex;
+      gap: 14px;
+      background: var(--white);
+      border-radius: 16px;
+      padding: 16px;
+      align-items: center;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    }
+    .speaker-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #ece5d8;
+      flex-shrink: 0;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.6rem;
+      color: #8899aa;
+      text-align: center;
+      border: 2px solid var(--gold-light);
+    }
+    .speaker-info h4 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .speaker-info .speaker-title {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      margin-bottom: 5px;
+    }
+    .speaker-info p {
+      font-size: 0.8rem;
+      color: var(--text-mid);
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       10. QUESTION
+    ============================================================ */
+    .sec-question { background: var(--white); }
+    .qa-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 24px 0 28px;
+    }
+    .qa-item {
+      border-radius: 14px;
+      overflow: hidden;
+      border: 1px solid var(--border-light);
+    }
+    .qa-q {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 15px 16px;
+      background: var(--bg-soft);
+      user-select: none;
+    }
+    .qa-icon {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.75rem;
+      flex-shrink: 0;
+    }
+    .qa-icon-q {
+      background: linear-gradient(135deg, var(--terra-soft), var(--terra-main));
+      color: #fff;
+    }
+    .qa-icon-a {
+      background: linear-gradient(135deg, var(--gold-main), var(--gold-deep));
+      color: #fff;
+    }
+    .qa-q-text {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-dark);
+      line-height: 1.55;
+      flex: 1;
+      padding-top: 2px;
+    }
+    .qa-a {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 14px 16px;
+      background: var(--white);
+      border-top: 1px solid var(--border-light);
+    }
+    .qa-a-text {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+      flex: 1;
+      padding-top: 3px;
+    }
+
+    /* ============================================================
+       11. VOICE
+    ============================================================ */
+    .sec-voice { background: var(--bg-warm-light); }
+    .voice-heading-sub {
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      font-size: 1rem;
+      font-style: italic;
+      color: var(--text-mid);
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .line-bubbles {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      margin: 0 0 28px;
+    }
+    .line-bubble-wrap {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+    }
+    .line-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.58rem;
+      font-weight: 700;
+      color: #fff;
+      text-align: center;
+    }
+    .line-avatar-1 { background: linear-gradient(135deg, var(--terra-soft), var(--terra-main)); }
+    .line-avatar-2 { background: linear-gradient(135deg, var(--gold-main), var(--gold-deep)); }
+    .line-avatar-3 { background: linear-gradient(135deg, #33456a, var(--navy-main)); }
+    .line-bubble {
+      background: var(--white);
+      border-radius: 18px 18px 18px 4px;
+      padding: 14px 16px;
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+      max-width: calc(100% - 52px);
+      position: relative;
+    }
+    .line-bubble-name {
+      font-size: 0.68rem;
+      color: var(--text-light);
+      margin-bottom: 5px;
+      font-weight: 700;
+    }
+
+    /* ============================================================
+       12. FINAL CTA
+    ============================================================ */
+    .sec-final-cta {
+      background: linear-gradient(135deg, #faf4e8 0%, #eef2f8 50%, #f8ece5 100%);
+      text-align: center;
+      padding: 64px 0;
+      border-top: none;
+    }
+    .sec-final-cta .cta-title {
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      font-size: 1.3rem;
+      line-height: 1.65;
+      margin-bottom: 10px;
+    }
+    .sec-final-cta .cta-sub {
+      font-size: 0.85rem;
+      color: var(--text-mid);
+      margin-bottom: 28px;
+      line-height: 1.65;
+    }
+    .cta-wrap {
+      max-width: 340px;
+      margin: 0 auto;
+    }
+
+    /* ============================================================
+       13. COMPANY
+    ============================================================ */
+    .sec-company {
+      background: var(--bg-soft);
+      padding: 40px 0 20px;
+      border-top: 1px solid var(--border-light);
+    }
+    .company-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.82rem;
+      margin-top: 16px;
+    }
+    .company-table tr { border-bottom: 1px solid var(--border-light); }
+    .company-table td { padding: 10px 0; vertical-align: top; }
+    .company-table td:first-child {
+      color: var(--text-light);
+      width: 80px;
+      font-size: 0.75rem;
+      padding-right: 12px;
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    .site-footer {
+      background: var(--navy-deep);
+      color: rgba(255,255,255,0.6);
+      padding: 28px 0 20px;
+      text-align: center;
+    }
+    .footer-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .footer-logo .logo-text {
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+      font-size: 1rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 700;
+    }
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+    .footer-links a {
+      color: rgba(255,255,255,0.5);
+      font-size: 0.72rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+    .footer-copy {
+      font-size: 0.68rem;
+      color: rgba(255,255,255,0.35);
+    }
+
+    /* ============================================================
+       ORNAMENT & ANIMATION
+    ============================================================ */
+    .ornament {
+      text-align: center;
+      color: var(--gold-main);
+      font-size: 1.2rem;
+      margin: 4px 0 20px;
+      letter-spacing: 8px;
+      opacity: 0.5;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-body { animation: fadeUp 0.7s ease both; }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: none;
+    }
+    /* JS無効・エラー時もコンテンツを必ず表示する保険 */
+    .no-observer .reveal { opacity: 1; transform: none; }
+  </style>
+  <noscript><style>.reveal { opacity: 1 !important; transform: none !important; }</style></noscript>
+</head>
+<body>
+
+<!-- ============================================================
+     1. HEADER
+     ※主催表記（ABCash単独／Merone併記）は要確認。仮でおとな女子の投資講座名義
+============================================================ -->
+<header class="site-header">
+  <div class="wrap">
+    <a href="#" class="site-logo">
+      おとな女子の投資講座
+      <span class="logo-sub">先着100名さま限定プログラムのご案内</span>
+    </a>
+    <!-- CTA LINK: 差し替え先 = 投資講座のLINE登録URL（未確定） -->
+    <a href="#cta-final" class="header-cta">無料で参加する</a>
+  </div>
+</header>
+
+
+<!-- ============================================================
+     2. HERO
+============================================================ -->
+<section class="hero">
+
+  <div class="hero-img-wrap">
+    <div class="hero-badge">
+      <div class="badge-num">先着<br>100名</div>
+      <div class="badge-text">さま<br>限定</div>
+    </div>
+    <!-- HERO PHOTO: 仮でスマセル夏期講習と同じ写真を流用（差し替え可）。
+         くみこの手書きコピーを重ねる場合はこの直後にオーバーレイを追加 -->
+    <img class="hero-photo" src="https://drive.google.com/thumbnail?id=1jR_iBs-qrGrvropFWANQerbDMyqKnSHe&sz=w1600"
+         alt="メイン写真" loading="eager"
+         onerror="this.style.display='none';document.getElementById('hero-img-fallback').style.display='flex';">
+    <div id="hero-img-fallback" class="hero-img-placeholder" style="display:none;">
+      <span style="line-height:1.6; font-size:0.8rem">ヘッダー写真（差し替え）<br>Driveフォルダを「リンクを知っている全員が閲覧可」に設定すると表示されます</span>
+    </div>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-partner-badge">おとな女子のための3日間</div>
+
+    <h1 class="sec-title f-head hero-headline">
+おとな女子の<br>3日間集中<br><span class="brand-underline">投資講座</span>
+    </h1>
+    <p class="hero-sub">〜「増やす」の前に、「わかる」から〜</p>
+
+    <div class="hero-tags">
+      <span class="hero-tag">8/24〜8/26</span>
+      <span class="hero-tag">毎晩21:00〜22:00</span>
+      <span class="hero-tag hero-tag-terra">先着100名さま</span>
+      <span class="hero-tag">無料（通常9,800円）</span>
+    </div>
+
+    <!-- CTA LINK: 差し替え先 = 投資講座のLINE登録URL（未確定） -->
+    <a href="#cta-final" class="btn-cta">
+      先着100名の無料投資講座に参加する
+      <span class="arrow-circle">&#9654;</span>
+    </a>
+    <p class="hero-note">※先着100名さま限定 0円／アーカイブあり・スマホOK・顔出し不要</p>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     3. WORRIES
+============================================================ -->
+<section class="sec-worries">
+  <div class="wrap reveal">
+    <div class="fukidashi">こんなお悩みありませんか？</div>
+
+    <div class="sec-en-title">
+      <span class="brand-underline">WORRIES</span>
+    </div>
+
+    <ul class="worries-list">
+      <li>
+        <span class="prob-dot"></span>
+        <span>NISAは始めたけれど、何に投資しているか答えられない</span>
+      </li>
+      <li>
+        <span class="prob-dot"></span>
+        <span>貯金はしているのに、将来の不安がずっと消えない</span>
+      </li>
+      <li>
+        <span class="prob-dot"></span>
+        <span>お金のことを、誰に相談していいかわからない</span>
+      </li>
+      <li>
+        <span class="prob-dot"></span>
+        <span>「やらなきゃ」と思いながら、1年前と何も変わっていない</span>
+      </li>
+      <li>
+        <span class="prob-dot"></span>
+        <span>損をするのがこわくて、最初の一歩が踏み出せない</span>
+      </li>
+      <li>
+        <span class="prob-dot"></span>
+        <span>老後にいくら必要なのか、自分の数字を見たことがない</span>
+      </li>
+    </ul>
+
+    <div class="worries-closing">
+      <p>1個でも当てはまれば続きを見てください。</p>
+      <span class="accent">
+そんなあなたにこそ、<br>
+        この3日間がぴったりです！<br>
+        むずかしい専門用語は使いません。<br>「自分の数字がわかる私」に変わりましょう。
+      </span>
+    </div>
+
+    <!-- CTA LINK: 差し替え先 = 投資講座のLINE登録URL（未確定） -->
+    <a href="#cta-final" class="btn-cta">
+      先着100名の無料投資講座に参加する
+      <span class="arrow-circle">&#9654;</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     4. MERIT
+============================================================ -->
+<section class="sec-merit">
+  <div class="wrap reveal">
+    <div class="fukidashi fukidashi-navy">こんな人におすすめ！こんなメリットが得られます!!</div>
+
+    <div class="sec-en-title">
+      <span class="brand-underline">MERIT</span>
+    </div>
+
+    <ul class="merit-list">
+      <li>
+        <div class="merit-check">
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>お金の基礎のキソから、やさしい言葉で学べる</span>
+      </li>
+      <li>
+        <div class="merit-check">
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>貯金と投資のバランスを、自分で判断できるようになる</span>
+      </li>
+      <li>
+        <div class="merit-check">
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>NISAの中身を、自分の言葉で説明できるようになる</span>
+      </li>
+      <li>
+        <div class="merit-check">
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>65歳までに必要な「自分の数字」がわかる</span>
+      </li>
+      <li>
+        <div class="merit-check">
+          <svg width="12" height="10" viewBox="0 0 12 10" fill="none"><path d="M1 5L4.5 8.5L11 1" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </div>
+        <span>同じ悩みを持つ仲間と、3日間で一気に走り抜けられる</span>
+      </li>
+    </ul>
+
+    <div class="merit-campaign-box">
+      <div class="camp-title">この夏の締めくくりに、お届けする特別企画です。</div>
+      <p>
+        3日間の集中講義とワークで、<strong>「お金がわかる私」への第一歩を踏み出せる</strong>無料集中講義です！<br><br>
+        毎晩60分、聞くだけではなく手を動かすワーク付き。3日目には、あなた自身の数字が1枚のシートになります。
+      </p>
+    </div>
+
+    <p style="font-size:0.85rem; color:var(--text-mid); line-height:1.75; margin-bottom:16px">
+      人は自分だけではどうしてもダラダラしてしまうもの。
+    </p>
+
+    <div class="merit-circles">
+      <div class="merit-circle merit-circle-1">短期集中でお金の基礎を身につけたい方も</div>
+      <div class="merit-circle merit-circle-2">仲間と一緒にマインドアップしながら進みたい方も</div>
+    </div>
+
+    <div class="merit-days">
+      <span class="days-num">3日間</span>
+      <p class="days-sub">集中講義で、3日間を一緒に走り抜けます！</p>
+    </div>
+
+    <!-- CTA LINK: 差し替え先 = 投資講座のLINE登録URL（未確定） -->
+    <a href="#cta-final" class="btn-cta">
+      先着100名の無料投資講座に参加する
+      <span class="arrow-circle">&#9654;</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     5. PRESENT（特典・内容は素案＝要すり合わせ）
+============================================================ -->
+<section class="sec-present">
+  <div class="wrap reveal">
+    <div class="fukidashi fukidashi-gold">無料投資講座でもらえる特典</div>
+
+    <div class="sec-en-title">
+      <span class="brand-underline">PRESENT</span>
+    </div>
+
+    <p class="present-title-sub">4つの特典があなたを後押しします</p>
+
+    <div class="present-cards">
+
+      <!-- 特典① -->
+      <div class="present-card">
+        <div class="present-num">1</div>
+        <div class="present-body">
+          <h4>あなた専用「65歳までのお金<br>シミュレーションシート」</h4>
+          <p>漠然とした将来の不安を、あなた自身の数字に変える1枚。3日目のワークでその場で完成します。</p>
+        </div>
+      </div>
+
+      <!-- 特典② -->
+      <div class="present-card">
+        <div class="present-num">2</div>
+        <div class="present-body">
+          <h4>3日間の講義スライド完全版＋<br>書き込み式ワークシート</h4>
+          <p>講義後もずっと手元に残るので、あとから何度でも見返して復習できます。</p>
+        </div>
+      </div>
+
+      <!-- 特典③ -->
+      <div class="present-card">
+        <div class="present-num">3</div>
+        <div class="present-body">
+          <h4>一緒に参加している<br>仲間同士の交流</h4>
+          <p>横のつながりが3日坊主を解消。同じ目標を持つ仲間と励まし合いながら進めます。</p>
+        </div>
+      </div>
+
+      <!-- 特典④ -->
+      <div class="present-card">
+        <div class="present-num">4</div>
+        <div class="present-body">
+          <h4>お金のプロに<br>直接質問できる環境</h4>
+          <p>「これって私の場合はどうなの？」を持ち帰らずに解消。専用チャットでいつでも質問できます。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA LINK: 差し替え先 = 投資講座のLINE登録URL（未確定） -->
+    <a href="#cta-final" class="btn-cta">
+      先着100名の無料投資講座に参加する
+      <span class="arrow-circle">&#9654;</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     6. 完走プレゼント企画（金額・景品は要確認）
+============================================================ -->
+<section class="sec-challenge">
+  <div class="wrap reveal">
+    <div class="challenge-eyebrow">おとな女子の投資講座 限定 ｜ 完走プレゼント企画</div>
+
+    <h2 class="challenge-headline">
+      3日間やりきった方に、<br>
+      <span class="hl">ごほうび</span>があります。
+    </h2>
+
+    <p class="challenge-lead">
+      毎晩の講義のあとに、小さな課題をひとつだけ。<br>
+      3日間コンプリートした方には、最終日にお楽しみがあります。
+    </p>
+
+    <div class="prize-box">
+      <div class="prize-label">豪華景品もご用意！</div>
+      <p>
+        課題提出コンプリートした方には<br>
+        <span class="prize-num">総額30万円</span>
+        のキャッシュバック企画も…!
+      </p>
+      <!-- 現金（キャッシュバック景品）イメージ：扇状の一万円札イラスト -->
+      <div style="display:flex;justify-content:center;padding:6px 0 2px;">
+        <svg width="300" height="140" viewBox="0 0 300 140" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="現金イメージ">
+          <defs>
+            <linearGradient id="bill" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0" stop-color="#f3ecd2"/><stop offset="1" stop-color="#e3d8ad"/>
+            </linearGradient>
+          </defs>
+          <g>
+            <g transform="rotate(-22 150 150)"><rect x="78" y="44" width="144" height="66" rx="7" fill="url(#bill)" stroke="#c9b676" stroke-width="1.3"/><circle cx="195" cy="77" r="15" fill="none" stroke="#bfa85f" stroke-width="1.2"/><text x="104" y="84" font-family="Yu Gothic,sans-serif" font-size="19" font-weight="700" fill="#9c8740">&#165;10000</text></g>
+            <g transform="rotate(-11 150 150)"><rect x="78" y="40" width="144" height="66" rx="7" fill="url(#bill)" stroke="#c9b676" stroke-width="1.3"/><circle cx="195" cy="73" r="15" fill="none" stroke="#bfa85f" stroke-width="1.2"/><text x="104" y="80" font-family="Yu Gothic,sans-serif" font-size="19" font-weight="700" fill="#9c8740">&#165;10000</text></g>
+            <g><rect x="78" y="38" width="144" height="66" rx="7" fill="url(#bill)" stroke="#c9b676" stroke-width="1.3"/><circle cx="195" cy="71" r="15" fill="none" stroke="#bfa85f" stroke-width="1.2"/><text x="104" y="78" font-family="Yu Gothic,sans-serif" font-size="19" font-weight="700" fill="#9c8740">&#165;10000</text></g>
+            <g transform="rotate(11 150 150)"><rect x="78" y="40" width="144" height="66" rx="7" fill="url(#bill)" stroke="#c9b676" stroke-width="1.3"/><circle cx="195" cy="73" r="15" fill="none" stroke="#bfa85f" stroke-width="1.2"/><text x="104" y="80" font-family="Yu Gothic,sans-serif" font-size="19" font-weight="700" fill="#9c8740">&#165;10000</text></g>
+            <g transform="rotate(22 150 150)"><rect x="78" y="44" width="144" height="66" rx="7" fill="url(#bill)" stroke="#c9b676" stroke-width="1.3"/><circle cx="195" cy="77" r="15" fill="none" stroke="#bfa85f" stroke-width="1.2"/><text x="104" y="84" font-family="Yu Gothic,sans-serif" font-size="19" font-weight="700" fill="#9c8740">&#165;10000</text></g>
+          </g>
+        </svg>
+      </div>
+    </div>
+
+    <div class="challenge-features">
+      <span class="challenge-feature">課題は1日1つ・10分以内</span>
+      <span class="challenge-feature">最終日にプレゼント発表</span>
+      <span class="challenge-feature">完走ベスト3の発表も</span>
+    </div>
+
+    <!-- CTA LINK: 差し替え先 = 投資講座のLINE登録URL（未確定） -->
+    <a href="#cta-final" class="btn-cta">
+      先着100名の無料投資講座に参加する
+      <span class="arrow-circle">&#9654;</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     7. SUPPORT
+============================================================ -->
+<section class="sec-support">
+  <div class="wrap reveal">
+    <div class="fukidashi fukidashi-gold">サポート体制</div>
+
+    <div class="sec-en-title">
+      <span class="brand-underline">SUPPORT</span>
+    </div>
+
+    <div class="support-items">
+
+      <div class="support-item">
+        <div class="support-num">SUPPORT<br>01</div>
+        <div class="support-body">
+          <p>専用のオープンチャットで課題提出いただき<strong>講師が直接フィードバック</strong></p>
+        </div>
+      </div>
+
+      <div class="support-item">
+        <div class="support-num">SUPPORT<br>02</div>
+        <div class="support-body">
+          <p>同じ参加者との<strong>横の繋がりができる</strong>ので3日坊主解消！</p>
+        </div>
+      </div>
+
+      <div class="support-item">
+        <div class="support-num">SUPPORT<br>03</div>
+        <div class="support-body">
+          <p>専用のLINEで<strong>不安なことや疑問点</strong>も解消が可能</p>
+        </div>
+      </div>
+
+      <div class="support-item">
+        <div class="support-num">SUPPORT<br>04</div>
+        <div class="support-body">
+          <p><strong>アーカイブも24時間残る</strong>のでいつでも復習可能</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA LINK: 差し替え先 = 投資講座のLINE登録URL（未確定） -->
+    <a href="#cta-final" class="btn-cta">
+      先着100名の無料投資講座に参加する
+      <span class="arrow-circle">&#9654;</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     8. OVERVIEW（各日テーマは仮）
+============================================================ -->
+<section class="sec-overview">
+  <div class="wrap reveal">
+    <div class="fukidashi">概要</div>
+
+    <div class="sec-en-title">
+      <span class="brand-underline">OVERVIEW</span>
+    </div>
+
+    <div class="overview-box">
+      <div class="ov-date">8/24〜8/26 毎晩Zoomで配信（アーカイブあり）</div>
+      <p class="ov-desc">
+        毎晩Zoomにてレクチャーを受け、間に合わない方は録画で視聴。<br>
+        専用のオープンチャットで課題提出を行います。スマホOK・顔出し不要です。
+      </p>
+
+      <ul class="schedule-list">
+        <li>
+          <span class="sched-date">8/24（月）<br>21:00〜22:00</span>
+          <span class="sched-content">集中講義① お金の現在地がわかる（家計とお金の土台）</span>
+        </li>
+        <li>
+          <span class="sched-date">8/25（火）<br>21:00〜22:00</span>
+          <span class="sched-content">集中講義② 投資のキホンがわかる（NISAとつみたての仕組み）</span>
+        </li>
+        <li>
+          <span class="sched-date">8/26（水）<br>21:00〜22:00</span>
+          <span class="sched-content">集中講義③ 私の数字がわかる＋プレゼント発表＆完走ベスト3発表</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="overview-limit-box">
+      <div class="limit-label">トータル10万円分の内容が</div>
+      <div class="limit-price">
+        <span class="original">通常 9,800円</span>
+        <span class="sale">0円</span>
+      </div>
+      <div class="limit-tag">先着100名さま限定</div>
+    </div>
+
+    <!-- CTA LINK: 差し替え先 = 投資講座のLINE登録URL（未確定） -->
+    <a href="#cta-final" class="btn-cta">
+      先着100名の無料投資講座に参加する
+      <span class="arrow-circle">&#9654;</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     9. SPEAKERS（登壇者・プロフィール文は要確認）
+============================================================ -->
+<section class="sec-speakers">
+  <div class="wrap reveal">
+    <div class="fukidashi fukidashi-navy">3日間、あなたと一緒に走る登壇者です</div>
+
+    <div class="sec-en-title">
+      <span class="brand-underline">SPEAKERS</span>
+    </div>
+
+    <p class="speakers-lead">
+      むずかしい話をやさしく話すプロが担当します。<br>
+      「聞くだけで終わらない60分」をお約束します。
+    </p>
+
+    <div class="speaker-cards">
+
+      <!-- SPEAKER 1: 写真は仮流用・肩書き文言は要確認 -->
+      <div class="speaker-card">
+        <div class="speaker-avatar">
+          <img src="https://drive.google.com/thumbnail?id=1jR_iBs-qrGrvropFWANQerbDMyqKnSHe&sz=w200"
+               alt="森川くみこ" loading="lazy"
+               style="width:100%;height:100%;object-fit:cover;object-position:center 20%;">
+        </div>
+        <div class="speaker-info">
+          <h4>森川くみこ</h4>
+          <div class="speaker-title">株式会社Merone 代表取締役CEO</div>
+          <p>のべ1,500名以上の女性の「働き方とお金」を支援。自身も会社員からキャリアを再設計した経験を持つ。</p>
+        </div>
+      </div>
+
+      <!-- SPEAKER 2 -->
+      <div class="speaker-card">
+        <div class="speaker-avatar">
+          <span style="font-size:0.58rem; line-height:1.4">登壇者<br>写真<br>72×72</span>
+        </div>
+        <div class="speaker-info">
+          <h4>登壇者（調整中）</h4>
+          <div class="speaker-title">お金の専門家</div>
+          <p>受講生と同じ「わからない」からスタートした経験を持つ講師が、当日やさしく解説します。</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA LINK: 差し替え先 = 投資講座のLINE登録URL（未確定） -->
+    <a href="#cta-final" class="btn-cta">
+      先着100名の無料投資講座に参加する
+      <span class="arrow-circle">&#9654;</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     10. QUESTION
+============================================================ -->
+<section class="sec-question">
+  <div class="wrap reveal">
+    <div class="fukidashi fukidashi-gold">よくある質問</div>
+
+    <div class="sec-en-title">
+      <span class="brand-underline">QUESTION</span>
+    </div>
+
+    <div class="qa-list">
+
+      <div class="qa-item">
+        <div class="qa-q">
+          <div class="qa-icon qa-icon-q">Q</div>
+          <div class="qa-q-text">投資の知識がゼロでも大丈夫ですか？</div>
+        </div>
+        <div class="qa-a">
+          <div class="qa-icon qa-icon-a">A</div>
+          <div class="qa-a-text">はい、もちろんです！専門用語を使わず基礎のキソからお話しするので、知識ゼロの方にこそ受けていただきたい内容です。</div>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">
+          <div class="qa-icon qa-icon-q">Q</div>
+          <div class="qa-q-text">21:00のリアルタイム参加ができないかもしれません？</div>
+        </div>
+        <div class="qa-a">
+          <div class="qa-icon qa-icon-a">A</div>
+          <div class="qa-a-text">安心してください!! <strong>アーカイブは残ります。</strong>ご予定があっても録画をご覧いただけるのでご安心ください。</div>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">
+          <div class="qa-icon qa-icon-q">Q</div>
+          <div class="qa-q-text">何かを売り込まれたりしませんか？</div>
+        </div>
+        <div class="qa-a">
+          <div class="qa-icon qa-icon-a">A</div>
+          <div class="qa-a-text">講義中の無理な勧誘は一切ありません。3日間受けてみて、ご自身に合わないと感じたらそのまま終了いただいて大丈夫です。</div>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">
+          <div class="qa-icon qa-icon-q">Q</div>
+          <div class="qa-q-text">アーカイブを確認してから課題を出しても大丈夫ですか？</div>
+        </div>
+        <div class="qa-a">
+          <div class="qa-icon qa-icon-a">A</div>
+          <div class="qa-a-text">もちろんです！！録画の動画は何回でも繰り返しご覧いただけます。</div>
+        </div>
+      </div>
+
+      <div class="qa-item">
+        <div class="qa-q">
+          <div class="qa-icon qa-icon-q">Q</div>
+          <div class="qa-q-text">スマホだけでも参加できますか？</div>
+        </div>
+        <div class="qa-a">
+          <div class="qa-icon qa-icon-a">A</div>
+          <div class="qa-a-text">はい、Zoomはスマホからの参加OK・顔出し不要です。ワークシートもスマホで書き込めるものをご用意しています。</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CTA LINK: 差し替え先 = 投資講座のLINE登録URL（未確定） -->
+    <a href="#cta-final" class="btn-cta">
+      先着100名の無料投資講座に参加する
+      <span class="arrow-circle">&#9654;</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     11. VOICE（吹き出しは素材候補＝実スクショに差し替え推奨・掲載可否要確認）
+============================================================ -->
+<section class="sec-voice">
+  <div class="wrap reveal">
+    <div class="fukidashi">受講した方の声</div>
+
+    <div class="sec-en-title">
+      <span class="brand-underline">VOICE</span>
+    </div>
+
+    <p class="voice-heading-sub f-head">
+      「不安の正体は、<br>知らないことでした。」
+    </p>
+
+    <!-- VOICE: 実際のLINEスクショ3枚に差し替えるのが最強（Driveサムネイル方式）。
+         以下は素案用のテキスト吹き出し（卒業生インタビュー実録より・掲載可否要確認） -->
+    <div class="line-bubbles">
+      <div class="line-bubble-wrap">
+        <div class="line-avatar line-avatar-1">30代<br>販売職</div>
+        <div class="line-bubble">
+          <div class="line-bubble-name">30代・販売職の方</div>
+          NISAは月5,000円から2万円に増額。何に投資しているか、やっと自分の言葉で説明できるようになりました。
+        </div>
+      </div>
+      <div class="line-bubble-wrap">
+        <div class="line-avatar line-avatar-2">30代<br>会社員</div>
+        <div class="line-bubble">
+          <div class="line-bubble-name">30代・会社員の方</div>
+          家計の見直しから始めて、サブスクの解約と携帯の乗り換えで月数千円。浮いたお金を将来のために回せています。
+        </div>
+      </div>
+      <div class="line-bubble-wrap">
+        <div class="line-avatar line-avatar-3">20代<br>会社員</div>
+        <div class="line-bubble">
+          <div class="line-bubble-name">20代・会社員の方</div>
+          知識のないまま投資するのは博打状態だったと気づきました。今は下がっても理由がわかるので焦りません。
+        </div>
+      </div>
+    </div>
+
+    <!-- CTA LINK: 差し替え先 = 投資講座のLINE登録URL（未確定） -->
+    <a href="#cta-final" class="btn-cta btn-cta-navy" style="margin-top:4px">
+      先着100名の無料投資講座に参加する
+      <span class="arrow-circle">&#9654;</span>
+    </a>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     12. FINAL CTA
+============================================================ -->
+<section class="sec-final-cta" id="cta-final">
+  <div class="wrap reveal">
+    <div class="ornament">- - -</div>
+    <h2 class="cta-title f-head">
+      この夏の終わりに、<br>
+      <span style="background:linear-gradient(90deg,var(--terra-main),var(--gold-deep));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">「お金がわかる私」へ。</span>
+    </h2>
+    <p class="cta-sub">
+      先着100名さま限定 0円<br>
+      通常9,800円のプログラムです。
+    </p>
+    <div class="cta-wrap">
+      <!-- CTA LINK: 差し替え先 = 投資講座のLINE登録URL（未確定のためダミー） -->
+      <a href="#" onclick="return false;" class="btn-cta" style="font-size:1.05rem; padding:18px 28px;">
+        投資講座に参加する!!
+        <span class="arrow-circle">&#9654;</span>
+      </a>
+      <p style="font-size:0.72rem; color:var(--text-light); margin-top:14px; line-height:1.6">
+        参加費無料（先着100名さま限定）<br>
+        アーカイブあり / スマホ参加OK / 顔出し不要
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     13. COMPANY INFO（主催表記は要確認：ABCash名義かMerone名義か）
+============================================================ -->
+<section class="sec-company">
+  <div class="wrap reveal">
+    <h3 class="f-head" style="font-size:1rem; margin-bottom:4px">会社概要</h3>
+    <table class="company-table">
+      <tr>
+        <td>社名</td>
+        <td>株式会社Merone</td>
+      </tr>
+      <tr>
+        <td>代表</td>
+        <td>代表取締役CEO 森川くみこ</td>
+      </tr>
+      <tr>
+        <td>設立</td>
+        <td>2019年6月</td>
+      </tr>
+      <tr>
+        <td>所在地</td>
+        <td>〒150-0012 東京都渋谷区広尾5-4-16 EAT PLAY WORKS 3階</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-logo">
+      <span class="logo-text">おとな女子の投資講座</span>
+    </div>
+    <div class="footer-links">
+      <!-- LINK: 特定商取引法ページURLに差し替え -->
+      <a href="#">特定商取引法に基づく表記</a>
+      <!-- LINK: プライバシーポリシーページURLに差し替え -->
+      <a href="#">プライバシーポリシー</a>
+    </div>
+    <p class="footer-copy">&copy; Merone, inc. All rights reserved.</p>
+  </div>
+</footer>
+
+
+<!-- ============================================================
+     JAVASCRIPT — Scroll reveal（失敗時も全コンテンツ表示を保証）
+============================================================ -->
+<script>
+(function() {
+  'use strict';
+  function showAll() {
+    document.documentElement.classList.add('no-observer');
+  }
+  try {
+    if (!('IntersectionObserver' in window)) { showAll(); return; }
+    var observer = new IntersectionObserver(
+      function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -30px 0px' }
+    );
+    document.querySelectorAll('.reveal').forEach(function(el) {
+      observer.observe(el);
+    });
+  } catch (e) {
+    showAll();
+  }
+  try {
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener('click', function(e) {
+        var href = this.getAttribute('href');
+        if (href === '#') return;
+        var target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  } catch (e) { /* アンカー補助が失敗しても閲覧に支障なし */ }
+})();
+</script>
+
+</body>
+</html>
