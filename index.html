@@ -1143,6 +1143,68 @@
       padding: 6px 13px;
       border-radius: 50px;
     }
+    /* HERO用 価格ドン見せバナー */
+    .hero-price-banner {
+      margin: 4px auto 20px;
+      text-align: center;
+    }
+    .hero-price-banner .ppl {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--navy-main);
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+    .hero-price-banner .pline {
+      display: flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 10px;
+      font-family: "Yu Gothic","YuGothic","游ゴシック","Hiragino Kaku Gothic ProN",sans-serif;
+    }
+    .hero-price-banner .orig {
+      font-size: 0.95rem;
+      color: var(--text-light);
+      text-decoration: line-through;
+    }
+    .hero-price-banner .parw {
+      font-size: 1rem;
+      color: var(--terra-main);
+      font-weight: 700;
+    }
+    .hero-price-banner .zero {
+      font-size: 2.7rem;
+      font-weight: 700;
+      color: var(--terra-main);
+      line-height: 1.1;
+      background: linear-gradient(transparent 68%, var(--gold-light) 68%);
+      padding: 0 4px;
+    }
+
+    /* 下部追従CTA */
+    .float-cta {
+      position: fixed;
+      left: 0; right: 0; bottom: 0;
+      z-index: 200;
+      padding: 10px 16px calc(10px + env(safe-area-inset-bottom, 0px));
+      background: rgba(255,255,255,0.94);
+      -webkit-backdrop-filter: blur(8px);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--border-light);
+      box-shadow: 0 -4px 18px rgba(29,49,73,0.10);
+      transition: transform 0.3s ease;
+    }
+    .float-cta.float-hidden { transform: translateY(120%); }
+    .float-cta .btn-cta {
+      max-width: 430px;
+      margin: 0 auto;
+      padding: 14px 20px;
+      font-size: 0.95rem;
+    }
+    /* 追従CTAに隠れないよう最下部へ余白 */
+    .site-footer { padding-bottom: calc(100px + env(safe-area-inset-bottom, 0px)); }
+
     /* HERO用 満員御礼リード */
     .hero-encore-lead {
       font-size: 0.85rem;
@@ -1193,7 +1255,7 @@
   <div class="wrap">
     <a href="#" class="site-logo">
       おとな女子の夏季講習
-      <span class="logo-sub">先着100名さま限定プログラムのご案内</span>
+      <span class="logo-sub" style="font-size:0.8rem;font-weight:700;color:var(--terra-main);line-height:1.35;">＼先着100名さま 無料／<br><span style="font-size:0.66rem;color:var(--text-light);font-weight:400;">通常9,800円 → 0円</span></span>
     </a>
     <!-- CTA LINK: 夏季講習オープンチャットURL（2026-08-04くみこ指定・確定） -->
     <a href="https://line.me/ti/g2/UkGxt-1Sol6n5xX1_AgJrdQVb_ZyA7MnFXqQbQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener" class="header-cta">無料で参加する</a>
@@ -1230,11 +1292,19 @@
     </h1>
     <p class="hero-sub">〜この夏メルカリで＋10万円〜</p>
 
+    <div class="hero-price-banner">
+      <span class="ppl">＼ 先着100名さま限定 ／</span>
+      <div class="pline">
+        <span class="orig">通常 9,800円</span>
+        <span class="parw">&#9654;</span>
+        <span class="zero">0円</span>
+      </div>
+    </div>
+
     <div class="hero-tags">
       <span class="hero-tag">8/24〜8/26</span>
       <span class="hero-tag">毎晩21:00〜22:00</span>
       <span class="hero-tag hero-tag-terra">先着100名さま</span>
-      <span class="hero-tag">無料（通常9,800円）</span>
     </div>
 
     <!-- CTA LINK: 夏季講習オープンチャットURL（2026-08-04くみこ指定・確定） -->
@@ -1913,6 +1983,17 @@
 
 
 <!-- ============================================================
+     下部追従CTA（常時タップ可能・ヒーローのCTA表示中のみ隠す）
+============================================================ -->
+<div class="float-cta" id="floatCta">
+  <a href="https://line.me/ti/g2/UkGxt-1Sol6n5xX1_AgJrdQVb_ZyA7MnFXqQbQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener" class="btn-cta">
+    先着100名 無料｜夏季講習に参加する
+    <span class="arrow-circle">&#9654;</span>
+  </a>
+</div>
+
+
+<!-- ============================================================
      JAVASCRIPT — Scroll reveal（失敗時も全コンテンツ表示を保証）
 ============================================================ -->
 <script>
@@ -1940,6 +2021,18 @@
   } catch (e) {
     showAll();
   }
+  // 追従CTA: ヒーローの大ボタンが見えている間だけ引っ込める（JS失敗時は常時表示）
+  try {
+    var floatCta = document.getElementById('floatCta');
+    var heroBtn = document.querySelector('.hero-body .btn-cta');
+    if (floatCta && heroBtn && ('IntersectionObserver' in window)) {
+      new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          floatCta.classList.toggle('float-hidden', entry.isIntersecting);
+        });
+      }, { threshold: 0.1 }).observe(heroBtn);
+    }
+  } catch (e) { /* 失敗しても追従CTAは表示されたまま */ }
   try {
     document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
       anchor.addEventListener('click', function(e) {
