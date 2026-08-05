@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
@@ -7,39 +7,39 @@
   <meta name="description" content="先着100名さま限定・0円。8/24〜8/26の3日間、メルカリで＋10万円を目指す夏期講習。2025冬は満員御礼、好評につきこの夏帰ってきます。">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&family=Klee+One:wght@400;600&display=swap" rel="stylesheet">
   <style>
     /* ============================================================
        平成エモ・夏休みノート トンマナ（くみこ提供フライヤー2026-08-05準拠）
        ノート罫線×黄色マーカー×ピンクペン×付箋×黒板×ポラロイド
     ============================================================ */
     :root {
-      --paper:       #fffcf4;
-      --paper-line:  #f6d8df;
-      --ink:         #453931;
-      --ink-soft:    #6b5d52;
-      --pink:        #e8577d;
-      --pink-deep:   #d64069;
-      --pink-soft:   #ffdbe4;
-      --pink-pale:   #fdeef2;
-      --yellow:      #ffe75a;
-      --yellow-soft: #fff3b0;
-      --sticky:      #fdf0a0;
+      --paper:       #fffbf2;
+      --paper-line:  #f5cfd8;
+      --ink:         #2e2521;
+      --ink-soft:    #59493f;
+      --pink:        #e94f77;
+      --pink-deep:   #d63868;
+      --pink-soft:   #ffd3df;
+      --pink-pale:   #fdeaef;
+      --yellow:      #ffe83e;
+      --yellow-soft: #fff0a0;
+      --sticky:      #ffe98a;
       --board:       #2f5a46;
       --board-deep:  #26493a;
       --wood:        #9a6a3f;
       --redpen:      #e0526e;
-      --tape:        rgba(255, 244, 214, 0.75);
+      --tape:        rgba(255, 241, 205, 0.8);
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; scroll-behavior: smooth; }
     body {
-      font-family: "Klee One", "Yu Gothic", "YuGothic", "游ゴシック", "Hiragino Sans", sans-serif;
+      font-family: "Yusei Magic", "Klee One", "Yu Gothic", "YuGothic", "游ゴシック", "Hiragino Sans", sans-serif;
       font-weight: 400;
       color: var(--ink);
       background: var(--paper);
-      line-height: 1.8;
+      line-height: 1.85;
       -webkit-font-smoothing: antialiased;
     }
     .f-mono {
@@ -59,9 +59,9 @@
     }
 
     /* マーカー・ペン装飾 */
-    .mk-y  { background: linear-gradient(transparent 52%, var(--yellow) 52%); padding: 0 3px; }
-    .mk-yl { background: linear-gradient(transparent 52%, var(--yellow-soft) 52%); padding: 0 3px; }
-    .mk-p  { background: linear-gradient(transparent 55%, var(--pink-soft) 55%); padding: 0 3px; }
+    .mk-y  { background: linear-gradient(transparent 46%, var(--yellow) 46%); padding: 0 3px; }
+    .mk-yl { background: linear-gradient(transparent 46%, var(--yellow-soft) 46%); padding: 0 3px; }
+    .mk-p  { background: linear-gradient(transparent 50%, var(--pink-soft) 50%); padding: 0 3px; }
     .pen-under { border-bottom: 3px solid var(--redpen); }
 
     /* セクション共通 */
@@ -96,8 +96,8 @@
       gap: 8px;
       background: var(--pink);
       color: #fff;
-      font-family: "Klee One", sans-serif;
-      font-weight: 600;
+      font-family: "Yusei Magic", "Klee One", sans-serif;
+      font-weight: 400;
       font-size: 1rem;
       padding: 15px 26px;
       border-radius: 50px;
@@ -489,11 +489,22 @@
       color: var(--yellow);
     }
     .day-card {
+      position: relative;
       border: 1.5px dashed rgba(246,245,236,0.55);
       border-radius: 10px;
       padding: 13px 14px;
       margin-bottom: 10px;
     }
+    .day-doodle { position: absolute; right: 10px; bottom: 8px; opacity: 0.75; }
+    .chalk-tray {
+      display: flex; justify-content: flex-end; gap: 6px;
+      margin-top: 12px; padding-right: 4px;
+    }
+    .chalk-tray span { width: 26px; height: 7px; border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.25); }
+    .chalk-tray .c1 { background: #8fc1e4; }
+    .chalk-tray .c2 { background: #ffe83e; }
+    .chalk-tray .c3 { background: #8ed492; }
+    .chalk-tray .c4 { background: #f7b3c4; }
     .day-top {
       display: flex; justify-content: space-between; align-items: baseline;
       font-family: "Courier New", ui-monospace, monospace;
@@ -532,6 +543,17 @@
     }
     .sticky-note:nth-child(odd)  { transform: rotate(-1.4deg); }
     .sticky-note:nth-child(even) { transform: rotate(1.2deg); }
+    .sticky-note::after {
+      position: absolute;
+      right: 12px; bottom: 8px;
+      font-size: 1.05rem;
+      color: var(--ink-soft);
+      opacity: 0.8;
+    }
+    .sticky-note:nth-child(1)::after { content: "\2661"; color: var(--pink-deep); } /* ♡ */
+    .sticky-note:nth-child(2)::after { content: "\2606"; }                          /* ☆ */
+    .sticky-note:nth-child(3)::after { content: "\263A"; }                          /* ☺ */
+    .sticky-note:nth-child(4)::after { content: "\273F"; color: var(--pink-deep); } /* ✿ */
     .sticky-note .pin {
       position: absolute; top: -8px; left: 50%;
       transform: translateX(-50%) rotate(-2deg);
@@ -974,6 +996,13 @@
         <div class="day-name">売れる準備を整える</div>
         <div class="day-tag">リアルタイム集中講義</div>
         <div class="day-desc">メルカリの基本と、利益につなげる出品の考え方を学びます。</div>
+        <svg class="day-doodle" width="30" height="24" viewBox="0 0 30 24" fill="none" aria-hidden="true">
+          <path d="M6 9 L4 3 L9 6 M24 9 L26 3 L21 6" stroke="#f6f5ec" stroke-width="1.4" stroke-linecap="round"/>
+          <ellipse cx="15" cy="14" rx="10" ry="8" stroke="#f6f5ec" stroke-width="1.4"/>
+          <circle cx="11.5" cy="13" r="1" fill="#f6f5ec"/><circle cx="18.5" cy="13" r="1" fill="#f6f5ec"/>
+          <path d="M13.5 17 Q15 18.5 16.5 17" stroke="#f6f5ec" stroke-width="1.2" stroke-linecap="round"/>
+          <path d="M2 13 L7 14 M2 17 L7 16 M28 13 L23 14 M28 17 L23 16" stroke="#f6f5ec" stroke-width="1" stroke-linecap="round"/>
+        </svg>
       </div>
 
       <div class="day-card">
@@ -981,6 +1010,14 @@
         <div class="day-name">仕入れを体験する</div>
         <div class="day-tag">買付け体験LIVE</div>
         <div class="day-desc">良質な仕入れ先で、実際に商品を選ぶ感覚をつかみます。</div>
+        <svg class="day-doodle" width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true">
+          <circle cx="13" cy="13" r="3" stroke="#f6f5ec" stroke-width="1.4"/>
+          <circle cx="13" cy="5.5" r="3.4" stroke="#f6f5ec" stroke-width="1.4"/>
+          <circle cx="20.5" cy="10.5" r="3.4" stroke="#f6f5ec" stroke-width="1.4"/>
+          <circle cx="17.5" cy="19" r="3.4" stroke="#f6f5ec" stroke-width="1.4"/>
+          <circle cx="8.5" cy="19" r="3.4" stroke="#f6f5ec" stroke-width="1.4"/>
+          <circle cx="5.5" cy="10.5" r="3.4" stroke="#f6f5ec" stroke-width="1.4"/>
+        </svg>
       </div>
 
       <div class="day-card">
@@ -988,6 +1025,9 @@
         <div class="day-name">3日間を結果につなげる</div>
         <div class="day-tag">プレゼント＆BEST3発表</div>
         <div class="day-desc">課題を振り返り、次の日から続けられる形に整えます。</div>
+        <svg class="day-doodle" width="28" height="27" viewBox="0 0 28 27" fill="none" aria-hidden="true">
+          <path d="M14 2 L17.2 9.6 L25.5 10.3 L19.2 15.7 L21.2 23.8 L14 19.4 L6.8 23.8 L8.8 15.7 L2.5 10.3 L10.8 9.6 Z" stroke="#f6f5ec" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
       </div>
 
       <div class="board-foot">
@@ -996,6 +1036,7 @@
         <span>録画は24時間</span>
         <span>顔出し不要</span>
       </div>
+      <div class="chalk-tray"><span class="c1"></span><span class="c2"></span><span class="c3"></span><span class="c4"></span></div>
     </div>
 
     <a href="https://line.me/ti/g2/UkGxt-1Sol6n5xX1_AgJrdQVb_ZyA7MnFXqQbQ?utm_source=invitation&utm_medium=link_copy&utm_campaign=default" target="_blank" rel="noopener" class="btn-cta">
