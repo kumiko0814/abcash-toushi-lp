@@ -152,7 +152,7 @@ html,body{background:#2a2a30;}
   <div class="bigword">まちがえても、いい。</div>
   <div class="bigsub">
     値段が合っているかは、出してみないとわかりません。<br>
-    <b>出す → はなまる＆フィードバック → 直す</b>　が、いちばん早い上達ルート。<br>
+    <b>出す → フィードバック → 直す</b>　が、いちばん早い上達ルート。<br>
     この教室は減点方式ではなく、<b>加点方式</b>です。
   </div>
 </section>
@@ -278,7 +278,7 @@ html,body{background:#2a2a30;}
     <div style="display:flex;align-items:center;gap:30px;padding:14px 0"><div class="ck">2</div><div style="font-weight:700;font-size:34px">出品画面のスクショ＋値段の理由を文章で提出</div></div>
     <div style="margin-top:26px;padding:22px 32px;border-radius:16px;background:#f7f0f4;text-align:center;
       font-family:'Noto Serif JP',serif;font-weight:500;font-size:28px;color:#7a6a76">
-      値段に自信がなくても大丈夫。出した方から、はなまるとフィードバックが届きます
+      値段に自信がなくても大丈夫。出すことが、今夜のゴールです
     </div>
   </div>
   <div class="footbar"><span class="s">✦</span>提出先：オプチャの「課題提出」<span style="color:#f0b7c9">｜</span>〆切：8/26（水）18:00<span class="s">✦</span></div>
@@ -296,7 +296,7 @@ html,body{background:#2a2a30;}
     <div class="sp p" style="left:70px;top:60px;font-size:50px">✦</div>
     <div class="sp v" style="right:80px;top:100px;font-size:36px">✦</div>
     <div class="sp p" style="right:140px;bottom:70px;font-size:42px">✦</div>
-    <div class="kw" id="kwBox" style="cursor:pointer">？？？</div>
+    <div class="kw">サンキュー</div>
     <div class="kwnote"><b>カタカナ</b>で、公式LINEに送ってくださいね</div>
   </div>
   <div class="footbar"><span class="s">✦</span>特典：夢の叶え方（動画）<span class="s">✦</span></div>
@@ -344,11 +344,6 @@ html,body{background:#2a2a30;}
     if(e.key==='ArrowLeft'||e.key==='ArrowUp')show(i-1);
   });
   addEventListener('resize',fit);
-  const kwBox=document.getElementById('kwBox');
-  let revealed=false;
-  function reveal(){if(revealed||!kwBox)return;revealed=true;kwBox.textContent=decodeURIComponent('%E3%82%B5%E3%83%B3%E3%82%AD%E3%83%A5%E3%83%BC');}
-  if(kwBox)kwBox.addEventListener('click',reveal);
-  addEventListener('keydown',e=>{if(e.key==='k'||e.key==='K')reveal();});
   document.title='Day2スライド（Fキーで発表モード・←→で送り）';
 })();
 </script>
