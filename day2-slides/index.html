@@ -59,7 +59,7 @@ html,body{background:#2a2a30;}
 .pcard img{display:block;width:400px;height:515px;object-fit:cover;border-radius:8px;}
 .prow{display:flex;align-items:baseline;gap:26px;padding:15px 0;border-bottom:2px dotted #f0c3d3;}
 .plabel{flex:none;width:210px;font-weight:700;font-size:27px;color:#e0709a;letter-spacing:.1em;}
-.pval{font-weight:500;font-size:31px;color:#3b3b46;}
+.pval{font-weight:500;font-size:31px;color:#3b3b46;white-space:nowrap;}
 .pval b{font-family:"Noto Serif JP",serif;font-weight:700;font-size:38px;}
 .pquote{margin-top:30px;padding:22px 30px;border-radius:18px;background:rgba(255,255,255,.75);
   font-family:"Noto Serif JP",serif;font-weight:500;font-size:26px;line-height:1.7;color:#7a6a76;
@@ -72,8 +72,8 @@ html,body{background:#2a2a30;}
   box-shadow:0 10px 26px rgba(196,150,175,.18);}
 .footbar .s{color:#ec9ab5;font-size:26px;}
 
-.kwcard{width:860px;margin:48px auto 0;padding:60px 40px 56px;text-align:center;position:relative;}
-.kw{font-family:"Noto Serif JP",serif;font-weight:700;font-size:170px;letter-spacing:.06em;text-indent:.06em;
+.kwcard{width:1160px;margin:48px auto 0;padding:60px 40px 56px;text-align:center;position:relative;}
+.kw{font-family:"Noto Serif JP",serif;font-weight:700;font-size:150px;letter-spacing:.04em;text-indent:.04em;white-space:nowrap;
   background:linear-gradient(135deg,#e0709a,#8f83d8);-webkit-background-clip:text;background-clip:text;color:transparent;
   line-height:1.1;}
 .kwnote{font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:31px;color:#5a5a68;margin-top:26px;letter-spacing:.08em;}
@@ -161,29 +161,29 @@ html,body{background:#2a2a30;}
 <section class="slide">
   <div class="dots" style="left:56px;bottom:70px"></div>
   <div class="blob pk" style="width:260px;height:260px;right:-100px;top:-110px"></div>
-  <div class="eyebrow">LESSON 01</div>
-  <div class="h1" style="font-size:66px">売れる説明文の「型」</div>
-  <div class="lead">この順番で書くだけで、ぐっと伝わります。</div>
-  <div style="width:1060px;margin:48px auto 0;display:flex;flex-direction:column;gap:22px">
-    <div class="card" style="display:flex;align-items:center;gap:32px;padding:24px 46px">
+  <div class="eyebrow" style="margin-top:44px">LESSON 01</div>
+  <div class="h1" style="font-size:60px;margin-top:18px">売れる説明文の「型」</div>
+  <div class="lead" style="margin-top:14px">この順番で書くだけで、ぐっと伝わります。</div>
+  <div style="width:1060px;margin:26px auto 0;display:flex;flex-direction:column;gap:16px">
+    <div class="card" style="display:flex;align-items:center;gap:32px;padding:15px 46px">
       <div class="num n1" style="width:64px;height:64px;font-size:28px">1</div>
-      <div style="font-weight:700;font-size:32px">ブランド名・アイテム名 <span style="color:#8b8b99;font-weight:500;font-size:26px">（検索される言葉を最初に）</span></div>
+      <div><div style="font-weight:700;font-size:30px">ブランド名・アイテム名</div><div style="color:#8b8b99;font-weight:500;font-size:22px;margin-top:4px">検索される言葉を最初に</div></div>
     </div>
-    <div class="card" style="display:flex;align-items:center;gap:32px;padding:24px 46px">
+    <div class="card" style="display:flex;align-items:center;gap:32px;padding:15px 46px">
       <div class="num n1" style="width:64px;height:64px;font-size:28px;background:linear-gradient(140deg,#e389b0,#cf7cb4)">2</div>
-      <div style="font-weight:700;font-size:32px">サイズ・色・状態 <span style="color:#8b8b99;font-weight:500;font-size:26px">（数字で書くと親切）</span></div>
+      <div><div style="font-weight:700;font-size:30px">サイズ・色・状態</div><div style="color:#8b8b99;font-weight:500;font-size:22px;margin-top:4px">数字で書くと親切</div></div>
     </div>
-    <div class="card" style="display:flex;align-items:center;gap:32px;padding:24px 46px">
+    <div class="card" style="display:flex;align-items:center;gap:32px;padding:15px 46px">
       <div class="num n2" style="width:64px;height:64px;font-size:28px">3</div>
-      <div style="font-weight:700;font-size:32px">使用感は正直に <span style="color:#8b8b99;font-weight:500;font-size:26px">（信頼が値下げ交渉を減らします）</span></div>
+      <div><div style="font-weight:700;font-size:30px">使用感は正直に</div><div style="color:#8b8b99;font-weight:500;font-size:22px;margin-top:4px">信頼が値下げ交渉を減らします</div></div>
     </div>
-    <div class="card" style="display:flex;align-items:center;gap:32px;padding:24px 46px">
+    <div class="card" style="display:flex;align-items:center;gap:32px;padding:15px 46px">
       <div class="num n3" style="width:64px;height:64px;font-size:28px">4</div>
-      <div style="font-weight:700;font-size:32px">どんな人におすすめか <span style="color:#8b8b99;font-weight:500;font-size:26px">（使う場面が想像できるように）</span></div>
+      <div><div style="font-weight:700;font-size:30px">どんな人におすすめか</div><div style="color:#8b8b99;font-weight:500;font-size:22px;margin-top:4px">使う場面が想像できるように</div></div>
     </div>
-    <div class="card" style="display:flex;align-items:center;gap:32px;padding:24px 46px">
+    <div class="card" style="display:flex;align-items:center;gap:32px;padding:15px 46px">
       <div class="num n4" style="width:64px;height:64px;font-size:28px">5</div>
-      <div style="font-weight:700;font-size:32px">発送・梱包のひとこと <span style="color:#8b8b99;font-weight:500;font-size:26px">（「丁寧に梱包します」の安心感）</span></div>
+      <div><div style="font-weight:700;font-size:30px">発送・梱包のひとこと</div><div style="color:#8b8b99;font-weight:500;font-size:22px;margin-top:4px">「丁寧に梱包します」の安心感</div></div>
     </div>
   </div>
 </section>
@@ -241,7 +241,7 @@ html,body{background:#2a2a30;}
       <div class="prow"><div class="plabel">趣味</div><div class="pval">国内外の母子旅・ホカンス・ヨガ</div></div>
       <div class="prow"><div class="plabel">メルカリ歴</div><div class="pval"><b>約10ヶ月</b></div></div>
       <div class="prow"><div class="plabel">過去最高の売上</div><div class="pval"><b>¥369,705</b></div></div>
-      <div class="prow"><div class="plabel">平均の売上</div><div class="pval"><b>¥134,765</b>（7ヶ月平均）</div></div>
+      <div class="prow"><div class="plabel">平均の売上</div><div class="pval"><b>¥134,765</b><span style="font-size:24px;color:#8b8b99">（7ヶ月平均）</span></div></div>
       <div class="pquote">「仕入れの度に毎回、<br>ワクワクさせて頂いています」</div>
     </div>
   </div>
@@ -255,12 +255,12 @@ html,body{background:#2a2a30;}
   <div class="eyebrow">INTERVIEW</div>
   <div class="h1" style="font-size:66px">つちけい先生に聞いてみます</div>
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px 40px;padding:0 150px;margin-top:64px">
-    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:30px">売上 369,705円の裏側</div></div>
-    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:30px">値段は、どうやって決めている？</div></div>
-    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:30px">説明文で、かならず入れること</div></div>
-    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:30px">値付けで失敗して、学んだお話</div></div>
-    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:30px">仕入れって、どこから届くの？</div></div>
-    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:30px">10ヶ月前のご自分にひと言</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:28px">売上 369,705円の裏側</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:28px">値段は、どうやって決めている？</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:28px">説明文で、かならず入れること</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:28px">値付けで失敗して、学んだお話</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:28px">仕入れって、どこから届くの？</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:28px">10ヶ月前のご自分にひと言</div></div>
   </div>
 </section>
 
