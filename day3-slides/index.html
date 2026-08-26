@@ -1,0 +1,288 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<title>Day3 最後のまとめ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{background:#2a2a30;}
+.deck{width:1536px;margin:0 auto;}
+.slide{position:relative;width:1536px;height:1024px;overflow:hidden;margin:0 0 14px;
+  font-family:"Noto Sans JP",sans-serif;color:#3b3b46;
+  background:
+    radial-gradient(46% 40% at 6% 4%, rgba(249,205,219,.5) 0%, transparent 65%),
+    radial-gradient(40% 36% at 96% 96%, rgba(199,190,235,.45) 0%, transparent 65%),
+    radial-gradient(36% 32% at 96% 6%, rgba(252,214,225,.45) 0%, transparent 65%),
+    linear-gradient(120deg,#fdf1f4 0%,#fbf3f6 45%,#f2f2fa 100%);}
+
+.blob{position:absolute;border-radius:50%;pointer-events:none;}
+.blob.pk{background:rgba(246,195,213,.55);}
+.blob.lv{background:rgba(199,190,235,.5);}
+.dots{position:absolute;width:150px;height:150px;pointer-events:none;opacity:.8;
+  background-image:radial-gradient(rgba(232,140,170,.5) 4.5px, transparent 5px);
+  background-size:30px 30px;}
+.sp{position:absolute;font-family:"Noto Serif JP",serif;pointer-events:none;}
+.sp.p{color:#ec9ab5;} .sp.v{color:#b9a5e0;} .sp.g{color:#cfae72;}
+
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:28px;
+  font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:27px;letter-spacing:.42em;text-indent:.42em;
+  color:#e88ba9;margin-top:64px;}
+.eyebrow::before,.eyebrow::after{content:"";width:150px;height:2px;background:#f0b7c9;}
+.h1{font-family:"Noto Serif JP",serif;font-weight:600;font-size:74px;letter-spacing:.14em;text-indent:.14em;
+  color:#3b3b46;text-align:center;margin-top:26px;text-shadow:0 2px 4px rgba(59,59,70,.12);}
+.lead{font-family:"Noto Serif JP",serif;font-weight:500;font-size:31px;letter-spacing:.2em;text-indent:.2em;
+  color:#e88ba9;text-align:center;margin-top:24px;}
+
+.card{background:rgba(255,255,255,.88);border-radius:26px;
+  box-shadow:0 14px 34px rgba(196,150,175,.22), 0 4px 10px rgba(196,150,175,.12);}
+.num{width:74px;height:74px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+  font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:32px;color:#fff;
+  box-shadow:0 8px 18px rgba(214,124,157,.35);}
+.num.n1{background:linear-gradient(140deg,#ef8fae,#e0709a);}
+.num.n2{background:linear-gradient(140deg,#d886b6,#b788cf);}
+.num.n3{background:linear-gradient(140deg,#a98fd6,#8f83d8);}
+.ck{width:52px;height:52px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(140deg,#f29cb8,#e37fa4);color:#fff;font-size:30px;font-weight:700;
+  box-shadow:0 6px 14px rgba(214,124,157,.3);}
+.ck.gold{background:linear-gradient(140deg,#d6b87e,#c9a86a);box-shadow:0 6px 14px rgba(190,155,90,.35);}
+
+.cvday{display:inline-block;padding:12px 58px 14px;border-radius:60px;margin-top:44px;
+  background:linear-gradient(135deg,#ef8fae,#a98fd6);color:#fff;
+  font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:36px;letter-spacing:.3em;text-indent:.3em;
+  box-shadow:0 12px 26px rgba(214,124,157,.35);}
+.cvdate{font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:30px;letter-spacing:.22em;text-indent:.22em;
+  color:#8b8b99;text-align:center;margin-top:40px;}
+.goldpill{display:inline-block;padding:12px 44px 14px;border-radius:60px;white-space:nowrap;
+  background:linear-gradient(135deg,#d6b87e,#c9a86a);color:#fff;
+  font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:30px;letter-spacing:.08em;
+  box-shadow:0 10px 24px rgba(190,155,90,.4);}
+
+.pwrap{display:flex;align-items:center;gap:80px;padding:0 130px;margin-top:56px;}
+.pcard{background:#fff;padding:20px 20px 26px;border-radius:14px;transform:rotate(-2deg);flex:none;
+  box-shadow:0 18px 40px rgba(196,150,175,.32);}
+.pcard img{display:block;width:400px;height:515px;object-fit:cover;border-radius:8px;}
+.prow{display:flex;align-items:baseline;gap:26px;padding:15px 0;border-bottom:2px dotted #f0c3d3;}
+.plabel{flex:none;width:210px;font-weight:700;font-size:27px;color:#e0709a;letter-spacing:.1em;}
+.pval{font-weight:500;font-size:31px;color:#3b3b46;white-space:nowrap;}
+.pval b{font-family:"Noto Serif JP",serif;font-weight:700;font-size:38px;}
+.pquote{margin-top:30px;padding:22px 30px;border-radius:18px;background:rgba(255,255,255,.75);
+  font-family:"Noto Serif JP",serif;font-weight:500;font-size:26px;line-height:1.7;color:#7a6a76;
+  border-left:6px solid #ef8fae;}
+
+.footbar{position:absolute;left:120px;right:120px;bottom:56px;
+  background:rgba(255,255,255,.8);border-radius:60px;padding:22px 30px;
+  display:flex;align-items:center;justify-content:center;gap:26px;
+  font-family:"Noto Serif JP",serif;font-weight:500;font-size:29px;color:#5a5a68;letter-spacing:.06em;
+  box-shadow:0 10px 26px rgba(196,150,175,.18);}
+.footbar .s{color:#ec9ab5;font-size:26px;}
+
+.bigword{font-family:"Noto Serif JP",serif;font-weight:600;font-size:92px;letter-spacing:.08em;text-indent:.08em;
+  color:#3b3b46;text-align:center;margin-top:110px;text-shadow:0 3px 6px rgba(59,59,70,.14);white-space:nowrap;}
+.bigsub{font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:36px;color:#7a7a88;text-align:center;
+  margin-top:56px;line-height:2.1;}
+.bigsub b{color:#e0709a;font-weight:700;}
+
+@media screen{
+  body.present{overflow:hidden;background:#1c1c22;}
+  body.present .deck{position:fixed;left:50%;top:50%;transform-origin:center;}
+  body.present .slide{position:absolute;left:0;top:0;margin:0;display:none;}
+  body.present .slide.on{display:block;}
+}
+</style></head>
+<body>
+<div class="deck" id="deck">
+
+<!-- 01 表紙 -->
+<section class="slide">
+  <div class="dots" style="right:60px;top:60px"></div>
+  <div class="dots" style="left:50px;bottom:70px"></div>
+  <div class="blob pk" style="width:300px;height:300px;left:-120px;bottom:-130px"></div>
+  <div class="blob lv" style="width:260px;height:260px;right:-100px;bottom:120px"></div>
+  <div class="sp g" style="left:270px;top:300px;font-size:54px">✦</div>
+  <div class="sp p" style="left:330px;top:370px;font-size:30px">✦</div>
+  <div class="sp g" style="right:280px;top:330px;font-size:44px">✦</div>
+  <div style="text-align:center;margin-top:130px">
+    <div class="eyebrow" style="margin-top:0">MERCARI 3DAYS CHALLENGE</div>
+    <div style="font-family:'Noto Serif JP',serif;font-weight:600;font-size:40px;letter-spacing:.24em;text-indent:.24em;color:#8b8b99;margin-top:52px">おとな女子の夏期講習</div>
+    <div class="h1" style="font-size:96px;margin-top:28px">最後のまとめ</div>
+    <div class="cvday">DAY 3</div>
+    <div class="cvdate">2026.8.26 WED ｜ 21:00 - 22:00</div>
+    <div style="margin-top:36px"><span class="goldpill">アーカイブのない、一夜かぎりの教室です</span></div>
+  </div>
+</section>
+
+<!-- 02 今夜の流れ -->
+<section class="slide">
+  <div class="dots" style="left:56px;top:56px"></div>
+  <div class="blob pk" style="width:280px;height:280px;right:-110px;top:-110px"></div>
+  <div class="blob lv" style="width:240px;height:240px;left:-100px;bottom:-100px"></div>
+  <div class="eyebrow">TONIGHT</div>
+  <div class="h1">今夜の流れ</div>
+  <div style="width:1000px;margin:70px auto 0;display:flex;flex-direction:column;gap:34px">
+    <div class="card" style="display:flex;align-items:center;gap:40px;padding:34px 52px">
+      <div class="num n1">01</div>
+      <div style="font-weight:700;font-size:37px">3日間のふりかえり</div>
+    </div>
+    <div class="card" style="display:flex;align-items:center;gap:40px;padding:34px 52px">
+      <div class="num n2">02</div>
+      <div style="font-weight:700;font-size:37px">ゲストトーク｜沙耶先生</div>
+    </div>
+    <div class="card" style="display:flex;align-items:center;gap:40px;padding:34px 52px">
+      <div class="num n3">03</div>
+      <div style="font-weight:700;font-size:37px">これからのお話</div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 ふりかえり -->
+<section class="slide">
+  <div class="dots" style="right:60px;bottom:70px"></div>
+  <div class="blob lv" style="width:280px;height:280px;left:-110px;top:-110px"></div>
+  <div class="eyebrow">LOOKING BACK</div>
+  <div class="h1" style="font-size:68px">この3日間で、やったこと</div>
+  <div style="display:flex;gap:40px;padding:0 110px;margin-top:70px">
+    <div class="card" style="flex:1;padding:44px 34px;text-align:center">
+      <div class="ck" style="margin:0 auto">✓</div>
+      <div style="font-family:'Noto Serif JP',serif;font-weight:600;font-size:30px;color:#e0709a;margin-top:24px;letter-spacing:.2em">第 1 夜</div>
+      <div style="font-weight:700;font-size:33px;margin-top:16px;line-height:1.5">魅力的な<br>写真を撮った</div>
+    </div>
+    <div class="card" style="flex:1;padding:44px 34px;text-align:center">
+      <div class="ck" style="margin:0 auto">✓</div>
+      <div style="font-family:'Noto Serif JP',serif;font-weight:600;font-size:30px;color:#9c86c2;margin-top:24px;letter-spacing:.2em">第 2 夜</div>
+      <div style="font-weight:700;font-size:33px;margin-top:16px;line-height:1.5">言葉と値段を<br>つけて、出品した</div>
+    </div>
+    <div class="card" style="flex:1;padding:44px 34px;text-align:center;box-shadow:0 14px 34px rgba(190,155,90,.25), 0 4px 10px rgba(190,155,90,.15)">
+      <div class="ck gold" style="margin:0 auto">3</div>
+      <div style="font-family:'Noto Serif JP',serif;font-weight:600;font-size:30px;color:#c9a86a;margin-top:24px;letter-spacing:.2em">第 3 夜</div>
+      <div style="font-weight:700;font-size:33px;margin-top:16px;line-height:1.5">これからの<br>歩き方を決める</div>
+    </div>
+  </div>
+  <div class="footbar"><span class="s">✦</span>もう「いつかやる人」ではなく「やった人」です<span class="s">✦</span></div>
+</section>
+
+<!-- 04 マインド -->
+<section class="slide">
+  <div class="dots" style="right:60px;bottom:70px"></div>
+  <div class="blob lv" style="width:300px;height:300px;left:-120px;top:-120px"></div>
+  <div class="blob pk" style="width:260px;height:260px;right:-100px;top:-100px"></div>
+  <div class="sp g" style="left:250px;top:260px;font-size:48px">✦</div>
+  <div class="sp p" style="right:270px;top:300px;font-size:34px">✦</div>
+  <div class="eyebrow">TONIGHT'S THEME</div>
+  <div class="bigword">「変わりたい」を、「変われた」に。</div>
+  <div class="bigsub">
+    3ヶ月前、沙耶先生も「変わりたい」側にいました。<br>
+    なにが変わるきっかけだったのか——<br>
+    今夜は<b>気持ちの話</b>を、たっぷり聞いていきます。
+  </div>
+</section>
+
+<!-- 05 沙耶先生 -->
+<section class="slide">
+  <div class="dots" style="right:60px;top:56px"></div>
+  <div class="blob lv" style="width:260px;height:260px;left:-100px;top:-100px"></div>
+  <div class="blob pk" style="width:300px;height:300px;right:-120px;bottom:-130px"></div>
+  <div class="sp p" style="left:120px;top:250px;font-size:44px">✦</div>
+  <div class="eyebrow">TODAY'S GUEST</div>
+  <div class="h1" style="font-size:64px">本日のゲスト｜沙耶先生</div>
+  <div class="pwrap">
+    <div class="pcard"><img src="img/ogata.jpg" alt=""></div>
+    <div style="flex:1">
+      <div class="prow"><div class="plabel">お名前</div><div class="pval">緒方 沙耶（さやさん）</div></div>
+      <div class="prow"><div class="plabel">趣味</div><div class="pval">ホットヨガ</div></div>
+      <div class="prow"><div class="plabel">メルカリ</div><div class="pval">この5月に、再スタート</div></div>
+      <div class="prow"><div class="plabel">過去最高の売上</div><div class="pval"><b>¥200,000</b></div></div>
+      <div class="prow"><div class="plabel">過去最高の利益</div><div class="pval"><b>¥160,000</b></div></div>
+      <div class="pquote">「本業が忙しいなかでも、<br>前向きに進められるマインドを共有できたら」</div>
+    </div>
+  </div>
+</section>
+
+<!-- 06 聞いてみます -->
+<section class="slide">
+  <div class="dots" style="left:56px;bottom:70px"></div>
+  <div class="blob pk" style="width:260px;height:260px;left:-100px;top:-110px"></div>
+  <div class="blob lv" style="width:260px;height:260px;right:-100px;bottom:-110px"></div>
+  <div class="eyebrow">INTERVIEW</div>
+  <div class="h1" style="font-size:66px">沙耶先生に聞いてみます</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px 40px;padding:0 150px;margin-top:64px">
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:28px">5月、再スタートを決めた日のこと</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:28px">忙しい本業と、どう両立している？</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:28px">環境に入って、変わったこと</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:28px">心が折れそうな日を、支えたもの</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:28px">利益16万円の瞬間の気持ち</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:28px">3ヶ月前のご自分に、ひと言</div></div>
+  </div>
+</section>
+
+<!-- 07 これからのお話 -->
+<section class="slide">
+  <div class="dots" style="right:60px;bottom:70px"></div>
+  <div class="blob lv" style="width:280px;height:280px;left:-110px;top:-110px"></div>
+  <div class="sp g" style="right:280px;top:280px;font-size:44px">✦</div>
+  <div class="eyebrow">AND THEN</div>
+  <div class="bigword" style="font-size:88px;margin-top:130px">この3日間に、つづきがあります。</div>
+  <div class="bigsub">
+    ひとりで続けるのがむずかしいことは、<br>
+    この3日間でいちばんよく分かったこと。<br>
+    このあと、<b>くみこから大切なお話</b>があります。
+  </div>
+</section>
+
+<!-- 08 放課後説明会 -->
+<section class="slide">
+  <div class="dots" style="right:60px;top:56px"></div>
+  <div class="blob pk" style="width:280px;height:280px;left:-110px;top:-110px"></div>
+  <div class="blob lv" style="width:300px;height:300px;right:-120px;bottom:-130px"></div>
+  <div class="sp g" style="left:250px;top:290px;font-size:48px">✦</div>
+  <div class="sp p" style="right:270px;top:340px;font-size:34px">✦</div>
+  <div class="eyebrow">SPECIAL</div>
+  <div class="h1">明日、放課後説明会</div>
+  <div class="card" style="width:1000px;margin:60px auto 0;padding:52px 70px;text-align:center">
+    <div class="goldpill" style="font-size:32px">8/27（木）21:00 ｜ Zoom</div>
+    <div style="font-family:'Noto Serif JP',serif;font-weight:600;font-size:44px;letter-spacing:.08em;margin-top:36px;line-height:1.6">つづきの教室のこと、<br>料金も特典も、ぜんぶお話しします</div>
+    <div style="font-size:29px;color:#8b8b99;margin-top:28px;line-height:1.8">個別にゆっくり相談したい方のお席は、数に限りがあります。<br>まずは明日、聞きにきてくださいね。</div>
+  </div>
+</section>
+
+<!-- 09 おわりに -->
+<section class="slide">
+  <div class="dots" style="left:56px;top:56px"></div>
+  <div class="dots" style="right:56px;bottom:70px"></div>
+  <div class="blob pk" style="width:300px;height:300px;right:-120px;top:-120px"></div>
+  <div class="blob lv" style="width:280px;height:280px;left:-110px;bottom:-120px"></div>
+  <div class="sp g" style="left:270px;top:300px;font-size:50px">✦</div>
+  <div class="sp p" style="right:290px;top:340px;font-size:36px">✦</div>
+  <div class="eyebrow">THANK YOU</div>
+  <div class="bigword" style="margin-top:150px">3日間、おつかれさまでした。</div>
+  <div class="bigsub">
+    みなさんの写真も、言葉も、値段も、ぜんぶ見ています。<br>
+    ここからが、ほんとうのスタートです。
+  </div>
+  <div class="footbar"><span class="s">✦</span>BEST3の発表は、8/28（金）にオープンチャットで<span class="s">✦</span></div>
+</section>
+
+</div>
+<script>
+(function(){
+  const slides=[...document.querySelectorAll('.slide')];
+  let i=0, present=false;
+  function fit(){
+    if(!present)return;
+    const s=Math.min(innerWidth/1536,innerHeight/1024);
+    const d=document.getElementById('deck');
+    d.style.transform='translate(-50%,-50%) scale('+s+')';
+    d.style.width='1536px';d.style.height='1024px';
+  }
+  function show(n){i=Math.max(0,Math.min(slides.length-1,n));
+    slides.forEach((s,k)=>s.classList.toggle('on',k===i));}
+  addEventListener('keydown',e=>{
+    if(e.key==='f'||e.key==='F'){present=!present;document.body.classList.toggle('present',present);show(i);fit();}
+    if(!present)return;
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='ArrowDown')show(i+1);
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp')show(i-1);
+  });
+  addEventListener('resize',fit);
+  document.title='Day3スライド（Fキーで発表モード・←→で送り）';
+})();
+</script>
+</body></html>
