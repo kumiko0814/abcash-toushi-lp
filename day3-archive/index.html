@@ -1,0 +1,79 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>最終夜アーカイブ｜おとな女子の夏期講習</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:"Noto Sans JP",sans-serif;color:#3b3b46;min-height:100vh;
+  background:
+    radial-gradient(60% 30% at 8% 4%, rgba(249,205,219,.5) 0%, transparent 65%),
+    radial-gradient(50% 26% at 94% 90%, rgba(199,190,235,.45) 0%, transparent 65%),
+    linear-gradient(150deg,#fdf1f4 0%,#fbf3f6 45%,#f2f2fa 100%);}
+.wrap{max-width:680px;margin:0 auto;padding:34px 18px 60px;}
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;
+  font-weight:500;font-size:12px;letter-spacing:.34em;text-indent:.34em;color:#e88ba9;}
+.eyebrow::before,.eyebrow::after{content:"";width:44px;height:1.5px;background:#f0b7c9;}
+h1{font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(26px,7vw,38px);
+  letter-spacing:.1em;text-indent:.1em;text-align:center;margin-top:14px;color:#3b3b46;}
+.lead{font-family:"Noto Serif JP",serif;font-weight:500;font-size:clamp(13px,3.6vw,16px);
+  letter-spacing:.12em;color:#e88ba9;text-align:center;margin-top:12px;}
+.goldpill{display:block;width:fit-content;margin:22px auto 0;padding:9px 22px 10px;border-radius:60px;
+  background:linear-gradient(135deg,#d6b87e,#c9a86a);color:#fff;font-weight:700;
+  font-size:clamp(13px,3.8vw,16px);letter-spacing:.06em;box-shadow:0 8px 20px rgba(190,155,90,.35);white-space:nowrap;}
+.timer{margin-top:14px;text-align:center;font-family:"Noto Serif JP",serif;font-weight:600;
+  font-size:clamp(20px,6vw,30px);color:#8f83d8;letter-spacing:.08em;}
+.timer small{display:block;font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:12px;color:#8b8b99;letter-spacing:.2em;margin-top:4px;}
+.player{margin-top:22px;background:#fff;border-radius:18px;padding:10px;
+  box-shadow:0 14px 34px rgba(196,150,175,.25);}
+.ratio{position:relative;width:100%;padding-top:56.25%;border-radius:12px;overflow:hidden;background:#1c1c22;}
+.ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+.note{margin-top:20px;text-align:center;font-size:clamp(13px,3.6vw,15px);color:#7a7a88;line-height:2;}
+.note b{color:#e0709a;}
+.ended{display:none;margin-top:26px;background:rgba(255,255,255,.9);border-radius:18px;
+  padding:34px 22px;text-align:center;box-shadow:0 14px 34px rgba(196,150,175,.22);}
+.ended .t{font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(18px,5vw,24px);letter-spacing:.1em;}
+.ended p{margin-top:16px;font-size:clamp(13px,3.7vw,15px);color:#7a7a88;line-height:2.1;}
+.sp{color:#ec9ab5;}
+</style></head>
+<body>
+<div class="wrap">
+  <div class="eyebrow">MERCARI 3DAYS CHALLENGE</div>
+  <h1>最終夜アーカイブ</h1>
+  <div class="lead">3日間の集大成、沙耶先生の「変われた話」</div>
+  <span class="goldpill">公開は 今夜24:00 まで</span>
+  <div class="timer" id="timer">--:--:--<small>公開終了まで</small></div>
+
+  <div id="live">
+    <div class="player"><div class="ratio">
+      <iframe src="https://www.youtube-nocookie.com/embed/Woi4XWca5oI" title="最終夜アーカイブ" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div></div>
+    <div class="note"><span class="sp">✦</span> このページは<b>今夜24:00</b>にそっと閉まります。おやすみ前にどうぞ <span class="sp">✦</span></div>
+  </div>
+
+  <div class="ended" id="ended">
+    <div class="t">公開は終了しました</div>
+    <p>最終夜をご覧くださったみなさん、ありがとうございました🌸<br>
+    大切なお話のつづき（スクールのご案内）は、<br>公式LINEに届いているメッセージから<br><b>8/31（月）まで</b>ご覧いただけます。</p>
+  </div>
+</div>
+<script>
+(function(){
+  var END = new Date('2026-08-28T00:00:00+09:00').getTime();
+  var t = document.getElementById('timer');
+  function tick(){
+    var d = END - Date.now();
+    if (d <= 0){
+      document.getElementById('live').style.display='none';
+      document.getElementById('ended').style.display='block';
+      t.style.display='none';
+      return;
+    }
+    var h=Math.floor(d/3600000), m=Math.floor(d%3600000/60000), s=Math.floor(d%60000/1000);
+    t.firstChild.nodeValue = (h<10?'0':'')+h+':'+(m<10?'0':'')+m+':'+(s<10?'0':'')+s;
+    setTimeout(tick, 250);
+  }
+  tick();
+})();
+</script>
+</body></html>
