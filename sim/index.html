@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>わたしの年末シミュレーション</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Noto+Serif+JP:wght@600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+:root{
+  --pink:#FFD7E6; --pinkD:#E8749B; --pinkDD:#D55A85;
+  --lav:#E9DFF9; --blue:#D9EAFB;
+  --navy:#3A4A72; --ink:#4A4A5C;
+  --gold:#E6C36A; --card:#FFFFFF;
+}
+body{font-family:"Noto Sans JP",sans-serif;color:var(--ink);min-height:100vh;
+  background:linear-gradient(160deg,#FFE9F1 0%,#F6EAFB 45%,#E3F0FD 100%);}
+.wrap{max-width:560px;margin:0 auto;padding:26px 18px 60px;}
+
+.scr{display:none;animation:pop .35s ease;}
+.scr.on{display:block;}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98);}to{opacity:1;transform:none;}}
+
+.badge{display:block;width:fit-content;margin:0 auto;padding:8px 20px 9px;border-radius:50px;
+  background:#fff;color:var(--pinkD);font-weight:700;font-size:12px;letter-spacing:.22em;text-indent:.22em;
+  box-shadow:0 6px 16px rgba(216,116,155,.18);white-space:nowrap;}
+h1{font-family:"Noto Serif JP",serif;font-weight:700;text-align:center;color:var(--navy);
+  font-size:clamp(24px,6.6vw,32px);letter-spacing:.06em;margin-top:16px;line-height:1.5;}
+.lead{text-align:center;font-size:clamp(13px,3.7vw,15px);color:#8a86a0;margin-top:12px;line-height:1.9;}
+.hero{display:block;width:min(46vw,190px);margin:18px auto 0;filter:drop-shadow(0 10px 20px rgba(216,116,155,.25));}
+
+.btn{display:block;width:100%;margin-top:22px;padding:17px;border:0;border-radius:60px;cursor:pointer;
+  background:linear-gradient(135deg,var(--pinkD),#B98BD9);color:#fff;font-weight:900;font-size:17px;
+  letter-spacing:.1em;box-shadow:0 10px 24px rgba(216,116,155,.4);font-family:inherit;}
+.btn:active{transform:translateY(2px);}
+.btn.ghost{background:#fff;color:var(--pinkD);box-shadow:0 6px 16px rgba(216,116,155,.16);}
+
+.prog{display:flex;justify-content:center;gap:10px;margin-top:6px;}
+.prog span{font-size:16px;color:#E7C8D7;transition:.2s;}
+.prog span.done{color:var(--pinkD);}
+
+.q{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);font-size:clamp(19px,5.2vw,24px);
+  text-align:center;margin-top:22px;line-height:1.6;}
+.qs{ text-align:center;font-size:12.5px;color:#a29cb8;margin-top:8px;}
+.opts{margin-top:20px;display:flex;flex-direction:column;gap:12px;}
+.opt{background:var(--card);border:2.5px solid transparent;border-radius:20px;padding:16px 18px;cursor:pointer;
+  display:flex;align-items:center;gap:14px;box-shadow:0 8px 20px rgba(150,130,180,.12);transition:.15s;}
+.opt:active{transform:scale(.98);}
+.opt .ic{width:40px;height:40px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--pink),var(--lav));font-size:18px;}
+.opt .t{font-weight:700;font-size:15.5px;color:var(--navy);}
+.opt .s{font-size:12px;color:#a29cb8;margin-top:2px;}
+.chibi{position:fixed;right:8px;bottom:8px;width:88px;opacity:.95;pointer-events:none;
+  filter:drop-shadow(0 6px 12px rgba(150,120,170,.3));}
+
+input[type=text]{width:100%;margin-top:18px;padding:16px;border:2.5px solid #EFD9E6;border-radius:18px;
+  font-size:15px;font-family:inherit;background:#fff;color:var(--ink);}
+input[type=text]:focus{outline:none;border-color:var(--pinkD);}
+
+/* 結果 */
+.rcard{background:var(--card);border-radius:26px;padding:26px 20px;margin-top:18px;
+  box-shadow:0 14px 34px rgba(150,130,180,.18);text-align:center;position:relative;}
+.rlabel{font-weight:700;font-size:13px;color:var(--pinkD);letter-spacing:.2em;text-indent:.2em;}
+.ramount{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--navy);
+  font-size:clamp(34px,9.5vw,46px);margin-top:10px;letter-spacing:.02em;white-space:nowrap;}
+.ramount small{font-size:.5em;}
+.rnote{font-size:12px;color:#a29cb8;margin-top:8px;}
+.type{display:flex;align-items:center;gap:16px;text-align:left;}
+.type img{width:84px;flex:none;}
+.type .tn{font-family:"Noto Serif JP",serif;font-weight:700;color:var(--pinkD);font-size:18px;}
+.type .td{font-size:13.5px;line-height:1.9;margin-top:6px;}
+.plan{border:2.5px dashed var(--gold);border-radius:20px;padding:18px;margin-top:16px;text-align:left;background:#FFFDF6;}
+.plan .pt{font-weight:900;color:var(--navy);font-size:15.5px;}
+.plan .pd{font-size:13.5px;line-height:1.9;margin-top:8px;}
+.plan .pd b{color:var(--pinkD);}
+.fine{font-size:10.5px;color:#b3aec4;line-height:1.8;margin-top:18px;text-align:left;}
+.spark{position:absolute;font-size:20px;color:var(--gold);}
+</style></head>
+<body>
+<div class="wrap">
+
+  <!-- 0 イントロ -->
+  <section class="scr on" id="s0">
+    <span class="badge">SPECIAL PRESENT</span>
+    <h1>わたしの<br>年末シミュレーション</h1>
+    <p class="lead">メルカリと自己投資、「わたしの場合」はどうなる？<br>4つの質問＋ミニ診断、ぜんぶで<b>1分</b>です🎀</p>
+    <img class="hero" src="img/lab-peace.png" alt="">
+    <button class="btn" onclick="go(1)">はじめる ♡</button>
+    <p class="qs" style="margin-top:14px">スクールにご興味のある方への特別プレゼントです</p>
+  </section>
+
+  <!-- 1 時間 -->
+  <section class="scr" id="s1">
+    <div class="prog"><span class="done">♥</span><span>♡</span><span>♡</span><span>♡</span><span>♡</span></div>
+    <p class="q">1日に使えそうな時間は<br>どのくらいですか？</p>
+    <div class="opts">
+      <div class="opt" onclick="pick('time',0,2)"><div class="ic">🌙</div><div><div class="t">〜30分くらい</div><div class="s">すき間時間でコツコツ</div></div></div>
+      <div class="opt" onclick="pick('time',1,2)"><div class="ic">☕️</div><div><div class="t">30分〜1時間</div><div class="s">1日のどこかでしっかり</div></div></div>
+      <div class="opt" onclick="pick('time',2,2)"><div class="ic">🌷</div><div><div class="t">1〜2時間</div><div class="s">腰を据えて取り組める</div></div></div>
+      <div class="opt" onclick="pick('time',3,2)"><div class="ic">🔥</div><div><div class="t">2時間以上</div><div class="s">本気モードでいける</div></div></div>
+    </div>
+    <img class="chibi" src="img/lab-typing.png" alt="">
+  </section>
+
+  <!-- 2 支払い -->
+  <section class="scr" id="s2">
+    <div class="prog"><span class="done">♥</span><span class="done">♥</span><span>♡</span><span>♡</span><span>♡</span></div>
+    <p class="q">いま、自己投資やローンなどで<br>毎月払っている金額は？</p>
+    <p class="qs">スクール・教材・サブスク・返済などぜんぶ合わせて</p>
+    <div class="opts">
+      <div class="opt" onclick="pick('pay',0,3)"><div class="ic">🕊</div><div><div class="t">とくにない（0円）</div></div></div>
+      <div class="opt" onclick="pick('pay',1,3)"><div class="ic">🌸</div><div><div class="t">〜1万円くらい</div></div></div>
+      <div class="opt" onclick="pick('pay',2,3)"><div class="ic">🌼</div><div><div class="t">1〜3万円くらい</div></div></div>
+      <div class="opt" onclick="pick('pay',3,3)"><div class="ic">💎</div><div><div class="t">3万円以上</div></div></div>
+    </div>
+  </section>
+
+  <!-- 3 メルカリレベル -->
+  <section class="scr" id="s3">
+    <div class="prog"><span class="done">♥</span><span class="done">♥</span><span class="done">♥</span><span>♡</span><span>♡</span></div>
+    <p class="q">いまのメルカリレベルは？</p>
+    <div class="opts">
+      <div class="opt" onclick="pick('lv',0,4)"><div class="ic">👀</div><div><div class="t">見る・買う専門</div><div class="s">出品はこれから</div></div></div>
+      <div class="opt" onclick="pick('lv',1,4)"><div class="ic">📦</div><div><div class="t">売ったことはある</div><div class="s">不用品を何回か</div></div></div>
+      <div class="opt" onclick="pick('lv',2,4)"><div class="ic">✨</div><div><div class="t">何回も売買している</div><div class="s">やり取りには慣れている</div></div></div>
+      <div class="opt" onclick="pick('lv',3,4)"><div class="ic">👑</div><div><div class="t">利益を出したことがある</div><div class="s">数万円の月も</div></div></div>
+    </div>
+    <img class="chibi" src="img/lab-think.png" alt="">
+  </section>
+
+  <!-- 4 ミニ性格診断 -->
+  <section class="scr" id="s4">
+    <div class="prog"><span class="done">♥</span><span class="done">♥</span><span class="done">♥</span><span class="done">♥</span><span>♡</span></div>
+    <p class="q" id="pq"></p>
+    <p class="qs">ミニ診断（<span id="pqn">1</span>/4）</p>
+    <div class="opts" id="popts"></div>
+  </section>
+
+  <!-- 5 メルカリURL -->
+  <section class="scr" id="s5">
+    <div class="prog"><span class="done">♥</span><span class="done">♥</span><span class="done">♥</span><span class="done">♥</span><span class="done">♥</span></div>
+    <p class="q">さいごに、あなたのメルカリ<br>アカウントを教えてください</p>
+    <p class="qs">プロフィールURLを貼ると、森川が実際に拝見して<br>アドバイスに活かします（あとで貼るでもOK）</p>
+    <input type="text" id="murl" placeholder="https://jp.mercari.com/user/profile/...">
+    <button class="btn" onclick="result()">結果を見る ♡</button>
+    <button class="btn ghost" onclick="result()">あとで貼る → 結果を見る</button>
+  </section>
+
+  <!-- 6 結果 -->
+  <section class="scr" id="s6">
+    <span class="badge">YOUR SIMULATION</span>
+    <div class="rcard">
+      <span class="spark" style="left:14px;top:12px">✦</span>
+      <span class="spark" style="right:16px;top:26px;font-size:14px">✦</span>
+      <div class="rlabel">年末までのメルカリ利益シミュレーション</div>
+      <div class="ramount" id="ramount"></div>
+      <div class="rnote">今回の登壇生徒・サポーター生徒の実績レンジをもとに算出</div>
+    </div>
+    <div class="rcard" id="backcard" style="display:none">
+      <div class="rlabel">さらに。いまの自己投資の「戻り」目安</div>
+      <div class="ramount" id="backamount" style="font-size:clamp(26px,7vw,34px)"></div>
+      <div class="rnote">事業として経費にできた場合の、来年の税金の戻り目安です（要件あり）</div>
+    </div>
+    <div class="rcard type">
+      <img id="timg" src="img/lab-peace.png" alt="">
+      <div><div class="tn" id="tname"></div><div class="td" id="tdesc"></div></div>
+    </div>
+    <div class="rcard" style="text-align:left">
+      <div class="rlabel" style="text-align:center">あなたに合いそうな始め方プラン</div>
+      <div class="plan"><div class="pt" id="ptitle"></div><div class="pd" id="pdesc"></div></div>
+    </div>
+    <button class="btn" onclick="consult()">この数字までの道のりを、森川と話す ♡</button>
+    <p class="qs">タップするとLINEに戻って「シミュレーションの相談」と送信されます</p>
+    <p class="fine">※本シミュレーションは、今回の講習に登壇・参加した生徒の実績レンジに基づく目安であり、成果をお約束するものではありません。※税金の戻りは事業の状況により異なります。確定申告・経費の扱いは税理士にご確認ください。※分割払いは手数料がかかる場合があります。</p>
+  </section>
+
+</div>
+<script>
+const A={};
+function go(n){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
+  document.getElementById('s'+n).classList.add('on');window.scrollTo(0,0);
+  if(n===4)renderP();}
+function pick(k,v,next){A[k]=v;go(next);}
+
+/* ミニ性格診断: 4問 → 4タイプ */
+const PQ=[
+ {q:'新しいことを始めるとき、近いのは？',o:[['まずやってみる！','adv'],['調べてから動きたい','ana']]},
+ {q:'作業するなら、どっちが好き？',o:[['毎日コツコツ同じリズム','cra'],['気分が乗った日に一気に','adv']]},
+ {q:'うれしい瞬間は？',o:[['「ありがとう」と言われたとき','hos'],['数字が伸びたとき','ana']]},
+ {q:'お部屋の片づけは？',o:[['きっちり分類したい','cra'],['ざっくりでも居心地重視','hos']]},
+];
+let pi=0;const score={cra:0,adv:0,ana:0,hos:0};
+function renderP(){const d=PQ[pi];document.getElementById('pq').textContent=d.q;
+  document.getElementById('pqn').textContent=pi+1;
+  const box=document.getElementById('popts');box.innerHTML='';
+  d.o.forEach(([t,k])=>{const el=document.createElement('div');el.className='opt';
+    el.innerHTML='<div class="ic">♡</div><div><div class="t">'+t+'</div></div>';
+    el.onclick=()=>{score[k]++;pi++;if(pi<PQ.length)renderP();else go(5);};box.appendChild(el);});}
+
+/* 利益レンジ表（万円/月）: レベル×時間 */
+const M={
+ 0:[[0.5,1.5],[1,3],[2,5],[3,8]],
+ 1:[[1,2],[2,4],[3,7],[5,10]],
+ 2:[[1.5,3],[3,6],[5,10],[7,15]],
+ 3:[[2,4],[4,8],[7,15],[10,20]]};
+const TYPES={
+ cra:{n:'コツコツ職人タイプ',img:'img/lab-typing.png',d:'決まったリズムの積み上げが最強の武器。毎日30分の「出品ルーティン」で、じわじわ伸びるタイプです。'},
+ adv:{n:'ワクワク冒険家タイプ',img:'img/lab-peace.png',d:'勢いと行動力が武器。新しい仕入れやジャンルにどんどん挑戦して、一気に伸びるタイプです。'},
+ ana:{n:'しっかり分析家タイプ',img:'img/lab-think.png',d:'数字とリサーチが武器。相場を見て値付けを整えるだけで、利益率がぐっと上がるタイプです。'},
+ hos:{n:'おもてなし上手タイプ',img:'img/lab-peace.png',flip:1,d:'ていねいな対応と梱包が武器。リピーターと高評価が積み上がって、指名買いされるタイプです。'}};
+function topType(){return Object.entries(score).sort((a,b)=>b[1]-a[1])[0][0];}
+
+function result(){
+  A.url=document.getElementById('murl').value.trim();
+  const r=M[A.lv||0][A.time||0];
+  const lo=Math.round(r[0]*3.5), hi=Math.round(r[1]*3.5); // 9月〜12月(初月は半分)
+  document.getElementById('ramount').innerHTML=lo+'<small>万</small> 〜 '+hi+'<small>万円</small>';
+  if((A.pay||0)>0){
+    const monthly=[0,1,2,3.5][A.pay];
+    const back=Math.round(monthly*12*0.18);
+    document.getElementById('backcard').style.display='block';
+    document.getElementById('backamount').innerHTML='約 '+back+'<small>万円</small>';
+  }
+  const t=TYPES[topType()];
+  document.getElementById('tname').textContent=t.n;
+  document.getElementById('tdesc').textContent=t.d;
+  const ti=document.getElementById('timg');ti.src=t.img;if(t.flip)ti.style.transform='scaleX(-1)';
+  const plans=[
+   {t:'まずは身軽にスタートプラン',d:'いまのお支払いがない今こそ、始めどきです。おうちの不用品でスタート→軌道に乗ってきたら、<b>お月謝は利益でまかなう</b>形が目指せます。'},
+   {t:'利益でお月謝カバープラン',d:'月々のお支払いと両立するなら、<b>24回などのゆったり分割</b>で月々の負担を小さくして、シミュレーションの利益でカバーしていく形が現実的です。'},
+   {t:'頭金＋分割のバランスプラン',d:'いまのお支払いと入れ替える形で、<b>頭金＋分割</b>にすると月々はほぼ変わらずに始められます。利益が乗ってきたら繰り上げもできます。'},
+   {t:'しっかり投資回収プラン',d:'すでに自己投資に慣れているあなたは、<b>回収の設計</b>が肝心。シミュレーションの利益レンジなら、数ヶ月での回収ラインが見えてきます。'}];
+  const p=plans[A.pay||0];
+  document.getElementById('ptitle').textContent=p.t;
+  document.getElementById('pdesc').innerHTML=p.d;
+  go(6);
+}
+function consult(){
+  location.href='https://line.me/R/oaMessage/%40116zkgew/?'+encodeURIComponent('シミュレーションの相談');
+}
+</script>
+</body></html>
