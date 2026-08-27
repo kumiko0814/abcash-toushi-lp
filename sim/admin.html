@@ -1,0 +1,43 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>シミュレーション閲覧ログ</title>
+<style>body{font-family:-apple-system,"Noto Sans JP",sans-serif;background:#FDF3F7;color:#3A4A72;padding:16px;max-width:760px;margin:0 auto}
+h1{font-size:18px;margin:10px 0}h2{font-size:15px;margin:22px 0 8px;color:#D55A85}
+table{width:100%;border-collapse:collapse;background:#fff;border-radius:10px;overflow:hidden;font-size:12.5px}
+th,td{padding:8px 10px;border-bottom:1px solid #F3DCE7;text-align:left;vertical-align:top}
+th{background:#FBE3EE;font-size:11.5px}
+.badge{background:#E8749B;color:#fff;border-radius:20px;padding:2px 10px;font-size:11px}
+button{padding:10px 18px;border:0;border-radius:30px;background:#E8749B;color:#fff;font-weight:700}
+input{padding:10px;border:1.5px solid #E8C2D4;border-radius:10px}</style></head><body>
+<h1>わたしの年末シミュレーション｜閲覧・回答ログ</h1>
+<div id="gate"><p style="font-size:13px">パスワードを入れてください</p>
+<input type="password" id="pw"><button onclick="load()">表示</button></div>
+<div id="main" style="display:none">
+<p style="font-size:12px;color:#8a86a0">最新200件・自動更新なし（再読み込みで更新）／名前は公式LINEの表示名</p>
+<h2>結果まで進んだ人 <span class="badge" id="cr">0</span></h2>
+<table id="tr"><tr><th>名前</th><th>日時</th><th>タイプ</th><th>回答・結果</th><th>メルカリURL</th></tr></table>
+<h2>開いた人（全アクセス） <span class="badge" id="co">0</span></h2>
+<table id="to"><tr><th>名前</th><th>日時</th></tr></table>
+</div>
+<script>
+const U="https://inrvprlyobghviklulcv.supabase.co/rest/v1/ailab_notes";
+const K="sb_publishable_ZrCNcsRHMci-l7Fns8QtIA_X22XZGJp";
+const MAPB="eyJLVWJCOVdTbExIIjogIuOBsuOCjeOBvyIsICJSblF1ck1XS1ozIjogIuOBguODvOOBoeOCg+OCkyIsICJMQzBldXpZQUZUIjogImthbmEiLCAiSmk3YUJMNkQ0dSI6ICLlpKflubPml6nntIAiLCAiS2h5N2dXUGlJZiI6ICLjgJDov7fjgYTkuK3jgJFzYXRvbXUiLCAiTjhpZW5PY0pIMSI6ICLjgJDov7fjgYTkuK3jgJHpiLTmnKjljYPliqDlrZAiLCAiaWV1N1JrbDU4UCI6ICLjgJDov7fjgYTkuK3jgJHjgb/jgY0iLCAiWVNyQkRUMDRnUSI6ICLov7fjgYTkuK3jgIDpiLTmnKjpppnnt5Lph4wiLCAiUmRVeTlPdjBlVyI6ICLjgobjgZrimaoiLCAibjFNMmRuTm9GMyI6ICLjgJDov7fjgYTkuK3jgJHlsI/mnpfmranmnKogKOeJn+eUsCkiLCAick1CeHY2azFYYyI6ICLjgJDov7fjgYTkuK3jgJFLYXJpbiIsICJrUkhOS3lCUVNpIjogIua4oemCieWEqiIsICJnanZRZWsxem81IjogIuOAkOi/t+OBhOS4reOAkeeUsuaWkCIsICJGQWo1ZWhEV05WIjogIktBWlXirZDvuI8iLCAiUlFoaUtHVWZ0ZCI6ICJuYW8iLCAiTk5rNUJBd0dJNiI6ICLjgJDmlK/miZXjgYTlvoXjgaHjgJHnvo7nt5IiLCAiSGp6VWFJNzVnYyI6ICLjgavjgarjgZXjgoQiLCAiTTJ3YlBnNXFZbCI6ICLojJwiLCAiRklwZGVWWU4wdiI6ICLmnb7nn7PvvIjlkInmrabvvInliqDlpYgiLCAiVGZKbVlWSUhOdyI6ICJISU5BTk8iLCAib2ViWldCNFU5USI6ICLjgqLjgqQiLCAiajhzYVBnTnltaiI6ICJTYWhvIiwgImgwTnd4ekZZMTUiOiAi44Go44KP44GtIiwgIkJYaE0xMFNVeDkiOiAi44CQ5pSv5omV44GE5b6F44Gh44CRSGFydWthIiwgIkdQblFoYmV6YUwiOiAi44CQOS8y44CRTWF5dWtvIFRvbWluYWdhIiwgIkNjOWtLaFhEYW8iOiAi44CQOS8144CR5pifIOS9s+e5lCIsICJZYWlFZ2R5dlRjIjogIuOAkDgvMzHjgJHmo64g44Gq44G/44G7IiwgIkhBd05FcWpudnUiOiAi44CQOS8244CR44CA44GN44KH44KTIiwgIkN0aEVqNDZQSWUiOiAiYS55IiwgIkIxT0hrSUdRYzAiOiAi44CQ6L+344GE5Lit44CRdS1rbyIsICJXSW4zbEtBNVo5IjogIuOAkOi/t+OBhOS4reOAkeOBq+OBl+OBr+OBn+OAgOOChuOBiyIsICJmQUVoTXJqWDVkIjogIuOCiuOBjSjjgobjgYspIiwgImdHQWxSWE1ZWmciOiAi5qKo5rKZIiwgIlpkZXNhMGNENXAiOiAi44Gf44GE44GNIOKAu+OCueOCr+ODvOODq+eUnyIsICJvdFRhUDJaS0oxIjogInNhcmEiLCAiT0ZObjhscUFDbyI6ICJtaW8gaG9yaWd1Y2hpKGtpdG8pIiwgIlFZMEt1aHBIT20iOiAi44G+44Gq44G/44KTIiwgImNRTXRvdVZubEQiOiAi44Oq44Ol44KrIiwgInBwTmw0WVV6S1AiOiAi5LmF5p+T55yf55CG5a2QIiwgIldOTVExQllseHYiOiAi44GP44G/44GTIiwgInFGZXNHWm4wcWYiOiAiaGlyb2tvLu+9oToqIiwgIklGbTZSbktPcWsiOiAi5bez5YqgIiwgIktzM2ZpajF0NFIiOiAiTWFuYW1pIiwgInU2c2lSMXVnWmMiOiAiWSIsICJpbDFiR1dCYWRQIjogImtheW8iLCAicVl0T0xscm16ZCI6ICLml6nngKzoo5Xnvo4iLCAiWG40eExjT3FiOSI6ICLmnZHkupXoia/lrZAiLCAib2k0RXN2UThCdSI6ICLkuK3ph47mnInluIwiLCAid09WSm1EUDJwNiI6ICJtYXl1bWkiLCAiZzJlV2tLOHU2OSI6ICJzYWNoaWtvIiwgIlZZTmNwS09KbDEiOiAieXVjaGFuKOWkj+acn+ODqeODg+ODkeODvCnwn4+T4pq98J+PkPCfjrPwn4+4IiwgIm9hd3BPNDNuc1QiOiAiS2FvcmkgVWUgWWFtYSIsICJzWTNTMnZvRkRFIjogIm1heXVf6YGL5Za244Oh44Oz44OQ44O8IiwgIm5IY3NYWnlhVDIiOiAi44Ok44K5IiwgIkxvUXAyM1JDTVAiOiAiSGl0b21pIFRha2FoYXNoaSIsICJNQVJKQjFQcWJkIjogIlNoaXp1a2EiLCAiUk11WWRJYlFXbSI6ICLmgbXmoqjpppkiLCAiT2laak4yNXhFdCI6ICJNYXl1IiwgInlRMUJFeUE1Ym4iOiAieXUtMSIsICJ2MEwxRzVIS0lWIjogIuODkuOCq+ODpOODnuOAgOmBi+WWtuODoeODs+ODkOODvCIsICJZakloS2ExNGZFIjogIuOAkOmbouiEseOAkWVyaWtvIiwgInNCRm5YQWJzMEQiOiAi44CQ6Zui6ISx44CRWVVNSS5UIiwgImxtY2VQYWpMOEQiOiAi57eS5pa55rKZ6IC244CAUmU6Y2hl55SfIiwgIkxEN2dkdTlaM1YiOiAi44KG44GNIiwgIk5lNnVPcllHVHEiOiAia291bm8iLCAiQWVveEpNNlNFMyI6ICLlsI/ph47lr7rkuYXnvo4g6YGL5Za244Oh44Oz44OQ44O8IiwgImlZcTBQdTl0aUIiOiAibWl5b3Ug6YGL5Za244Oh44Oz44OQ44O8IiwgInZhcWMyN2hWVEYiOiAiYXlhIiwgIkFQSnV6R2h4dkMiOiAi6Yi05pyoIiwgIkdvcVJ0RDBpTlQiOiAi5YSq5L2zWXV1a2HjgIDpgYvllrbjg6Hjg7Pjg5Djg7wiLCAiSTEwT2NWWnBDdSI6ICLjgb/jgaHjgZPjgIBSZTpjaGXnlJ8iLCAiaWdNeFg2aU9mUiI6ICLjgaTjgaHjgZHjgYTjgIBSZTpjaGXnlJ8iLCAidDB5RGdmZHNKbCI6ICLjgoHjgZAiLCAicGdXT2JhSUFUZCI6ICLjgbLjgYPjgaHjgoPjgpPiiJ5lciggwrQg4pa9IGAgKeKZoSIsICJBZTNHZllpaHlaIjogIuOBiuOBiuOBn+OBq+OBruOCiuOBkyIsICJjT1JqUTUwUERMIjogIuOBhuOBqeOCkyIsICJzc0Q3UXpvWElrIjogIuWyqeW0juOAgOWwj+eZvuWQiCIsICJaRzV3aDNjQVRqIjogIuOAkOmbouiEseOAkeS4readkSDpmb3lrZAifQ==";
+function nm(uid){try{const m=JSON.parse(decodeURIComponent(escape(atob(MAPB))));return m[uid]||uid;}catch(e){return uid;}}
+async function load(){
+ if(document.getElementById('pw').value!=='merone2026'){alert('ちがいます');return;}
+ const r=await fetch(U+'?member_id=in.(sim_open,sim_result)&select=member_id,member_name,mood,worry,want,created_at&order=created_at.desc&limit=400',
+  {headers:{apikey:K,Authorization:'Bearer '+K}});
+ const rows=await r.json();
+ document.getElementById('gate').style.display='none';
+ document.getElementById('main').style.display='block';
+ const tr=document.getElementById('tr'), to=document.getElementById('to');
+ let cr=0,co=0;
+ rows.forEach(x=>{
+  const t=(x.created_at||'').replace('T',' ').slice(0,16);
+  if(x.member_id==='sim_result'){cr++;
+   const tr2=tr.insertRow();[nm(x.member_name),t,x.mood||'',x.worry||'',x.want||''].forEach(v=>{tr2.insertCell().textContent=v;});}
+  else{co++;const tr3=to.insertRow();[nm(x.member_name),t].forEach(v=>{tr3.insertCell().textContent=v;});}});
+ document.getElementById('cr').textContent=cr;document.getElementById('co').textContent=co;
+}
+</script></body></html>

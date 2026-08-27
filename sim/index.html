@@ -152,12 +152,17 @@ input[type=text]:focus{outline:none;border-color:var(--pinkD);}
       <span class="spark" style="right:16px;top:26px;font-size:14px">✦</span>
       <div class="rlabel">年末までのメルカリ利益シミュレーション</div>
       <div class="ramount" id="ramount"></div>
-      <div class="rnote">今回の登壇生徒・サポーター生徒の実績レンジをもとに算出</div>
+      <div class="rnote" style="margin-top:10px;font-weight:700;color:#D55A85">※この数字は、スクールで学んだ生徒の実績レンジです<br>（独学の場合の目安ではありません）</div>
     </div>
     <div class="rcard" id="backcard" style="display:none">
       <div class="rlabel">さらに。いまの自己投資の「戻り」目安</div>
       <div class="ramount" id="backamount" style="font-size:clamp(26px,7vw,34px)"></div>
       <div class="rnote">事業として経費にできた場合の、来年の税金の戻り目安です（要件あり）</div>
+    </div>
+    <div class="rcard" id="paycard">
+      <div class="rlabel">お月謝を払っても、だいじょうぶ？</div>
+      <div class="ramount" id="payline" style="font-size:clamp(20px,5.6vw,26px);white-space:normal;line-height:1.7"></div>
+      <div class="rnote">お月謝は24回分割の一例（月々約2.1万円）で計算</div>
     </div>
     <div class="rcard type">
       <img id="timg" src="img/lab-peace.png" alt="">
@@ -175,6 +180,11 @@ input[type=text]:focus{outline:none;border-color:var(--pinkD);}
 </div>
 <script>
 const A={};
+const UID=new URLSearchParams(location.search).get('uid')||'';
+const LOG_U="https://inrvprlyobghviklulcv.supabase.co/rest/v1/ailab_notes";
+const LOG_K="sb_publishable_ZrCNcsRHMci-l7Fns8QtIA_X22XZGJp";
+function slog(tag,mood,worry,want){try{fetch(LOG_U,{method:"POST",headers:{apikey:LOG_K,Authorization:"Bearer "+LOG_K,"Content-Type":"application/json",Prefer:"return=minimal"},body:JSON.stringify({member_id:tag,member_name:UID||"(uidなし)",mood:mood||"",worry:(worry||"").slice(0,900),want:(want||"").slice(0,180)})});}catch(e){}}
+slog("sim_open","開封","", location.href.slice(0,170));
 function go(n){document.querySelectorAll('.scr').forEach(s=>s.classList.remove('on'));
   document.getElementById('s'+n).classList.add('on');window.scrollTo(0,0);
   if(n===4)renderP();}
@@ -231,6 +241,14 @@ function result(){
   const p=plans[A.pay||0];
   document.getElementById('ptitle').textContent=p.t;
   document.getElementById('pdesc').innerHTML=p.d;
+  const FEE=2.1, mlo=r[0];
+  let pl;
+  if(mlo*0.5>=FEE) pl='シミュレーション上、<b style="color:#D55A85">1ヶ月目</b>から利益が月々のお支払いを上回る計算です';
+  else if(mlo>=FEE) pl='シミュレーション上、<b style="color:#D55A85">2ヶ月目</b>から利益が月々のお支払いを上回る計算です';
+  else pl='まずは不用品の利益を頭金にして、<b style="color:#D55A85">ゆっくり分割</b>に切り替える設計がおすすめです';
+  document.getElementById('payline').innerHTML=pl;
+  const tk=topType();
+  slog("sim_result",TYPES[tk].n,JSON.stringify({time:A.time,pay:A.pay,lv:A.lv,type:tk,range:lo+'-'+hi+'万'}),A.url||'');
   go(6);
 }
 function consult(){
