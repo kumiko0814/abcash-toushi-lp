@@ -1,0 +1,219 @@
+<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>おとな女子の夏期講習 DAY1｜ゲストトーク みちこさん</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{background:#2a2a30;}
+.deck{width:1536px;margin:0 auto;}
+.slide{position:relative;width:1536px;height:1024px;overflow:hidden;margin:0 0 14px;
+  font-family:"Noto Sans JP",sans-serif;color:#3b3b46;
+  background:
+    radial-gradient(46% 40% at 6% 4%, rgba(249,205,219,.5) 0%, transparent 65%),
+    radial-gradient(40% 36% at 96% 96%, rgba(199,190,235,.45) 0%, transparent 65%),
+    radial-gradient(36% 32% at 96% 6%, rgba(252,214,225,.45) 0%, transparent 65%),
+    linear-gradient(120deg,#fdf1f4 0%,#fbf3f6 45%,#f2f2fa 100%);}
+.slide.img{background:#fff;}
+.slide.img img{display:block;width:1536px;height:1024px;}
+
+/* 装飾ブロブ・ドット */
+.blob{position:absolute;border-radius:50%;pointer-events:none;}
+.blob.pk{background:rgba(246,195,213,.55);}
+.blob.lv{background:rgba(199,190,235,.5);}
+.dots{position:absolute;width:150px;height:150px;pointer-events:none;opacity:.8;
+  background-image:radial-gradient(rgba(232,140,170,.5) 4.5px, transparent 5px);
+  background-size:30px 30px;}
+.sp{position:absolute;font-family:"Noto Serif JP",serif;pointer-events:none;}
+.sp.p{color:#ec9ab5;} .sp.v{color:#b9a5e0;}
+
+/* 見出し */
+.eyebrow{display:flex;align-items:center;justify-content:center;gap:28px;
+  font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:27px;letter-spacing:.42em;text-indent:.42em;
+  color:#e88ba9;margin-top:64px;}
+.eyebrow::before,.eyebrow::after{content:"";width:150px;height:2px;background:#f0b7c9;}
+.h1{font-family:"Noto Serif JP",serif;font-weight:600;font-size:74px;letter-spacing:.14em;text-indent:.14em;
+  color:#3b3b46;text-align:center;margin-top:26px;text-shadow:0 2px 4px rgba(59,59,70,.12);}
+.lead{font-family:"Noto Serif JP",serif;font-weight:500;font-size:31px;letter-spacing:.2em;text-indent:.2em;
+  color:#e88ba9;text-align:center;margin-top:24px;}
+
+/* カード */
+.card{background:rgba(255,255,255,.88);border-radius:26px;
+  box-shadow:0 14px 34px rgba(196,150,175,.22), 0 4px 10px rgba(196,150,175,.12);}
+.num{width:74px;height:74px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+  font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:32px;color:#fff;
+  box-shadow:0 8px 18px rgba(214,124,157,.35);}
+.num.n1{background:linear-gradient(140deg,#ef8fae,#e0709a);}
+.num.n2{background:linear-gradient(140deg,#d886b6,#b788cf);}
+.num.n3{background:linear-gradient(140deg,#a98fd6,#8f83d8);}
+.ck{width:52px;height:52px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(140deg,#f29cb8,#e37fa4);color:#fff;font-size:30px;font-weight:700;
+  box-shadow:0 6px 14px rgba(214,124,157,.3);}
+
+/* 表紙 */
+.cvday{display:inline-block;padding:12px 58px 14px;border-radius:60px;margin-top:44px;
+  background:linear-gradient(135deg,#ef8fae,#a98fd6);color:#fff;
+  font-family:"Noto Sans JP",sans-serif;font-weight:700;font-size:36px;letter-spacing:.3em;text-indent:.3em;
+  box-shadow:0 12px 26px rgba(214,124,157,.35);}
+.cvdate{font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:30px;letter-spacing:.22em;text-indent:.22em;
+  color:#8b8b99;text-align:center;margin-top:40px;}
+
+/* プロフィール */
+.pwrap{display:flex;align-items:center;gap:80px;padding:0 130px;margin-top:56px;}
+.pcard{background:#fff;padding:20px 20px 26px;border-radius:14px;transform:rotate(-2deg);flex:none;
+  box-shadow:0 18px 40px rgba(196,150,175,.32);}
+.pcard img{display:block;width:400px;height:515px;object-fit:cover;border-radius:8px;}
+.prow{display:flex;align-items:baseline;gap:26px;padding:15px 0;border-bottom:2px dotted #f0c3d3;}
+.plabel{flex:none;width:210px;font-weight:700;font-size:27px;color:#e0709a;letter-spacing:.1em;}
+.pval{font-weight:500;font-size:31px;color:#3b3b46;}
+.pval b{font-family:"Noto Serif JP",serif;font-weight:700;font-size:38px;}
+.pquote{margin-top:30px;padding:22px 30px;border-radius:18px;background:rgba(255,255,255,.75);
+  font-family:"Noto Serif JP",serif;font-weight:500;font-size:26px;line-height:1.7;color:#7a6a76;
+  border-left:6px solid #ef8fae;}
+
+/* 汎用フッター帯 */
+.footbar{position:absolute;left:120px;right:120px;bottom:56px;
+  background:rgba(255,255,255,.8);border-radius:60px;padding:22px 30px;
+  display:flex;align-items:center;justify-content:center;gap:26px;
+  font-family:"Noto Serif JP",serif;font-weight:500;font-size:29px;color:#5a5a68;letter-spacing:.06em;
+  box-shadow:0 10px 26px rgba(196,150,175,.18);}
+.footbar .s{color:#ec9ab5;font-size:26px;}
+
+/* キーワード */
+.kwcard{width:860px;margin:48px auto 0;padding:60px 40px 56px;text-align:center;position:relative;}
+.kw{font-family:"Noto Serif JP",serif;font-weight:700;font-size:200px;letter-spacing:.1em;text-indent:.1em;
+  background:linear-gradient(135deg,#e0709a,#8f83d8);-webkit-background-clip:text;background-clip:text;color:transparent;
+  line-height:1.1;}
+.kwnote{font-family:"Noto Sans JP",sans-serif;font-weight:500;font-size:31px;color:#5a5a68;margin-top:26px;letter-spacing:.08em;}
+.kwnote b{color:#e0709a;}
+
+@media screen{
+  body.present{overflow:hidden;background:#1c1c22;}
+  body.present .deck{position:fixed;left:50%;top:50%;transform-origin:center;}
+  body.present .slide{position:absolute;left:0;top:0;margin:0;display:none;}
+  body.present .slide.on{display:block;}
+}
+
+
+/* --- みちこさんパート専用：画面幅にあわせて縮小表示 --- */
+html,body{background:#2a2a30;}
+body{padding:0;}
+.page{max-width:1536px;margin:0 auto;padding:26px 0 60px;}
+.pagehead{font-family:"Noto Sans JP",sans-serif;color:#f6e5ec;text-align:center;padding:22px 18px 26px;}
+.pagehead .t{font-family:"Noto Serif JP",serif;font-weight:600;font-size:clamp(19px,4.4vw,28px);letter-spacing:.08em;line-height:1.6;}
+.pagehead .t .u{display:inline-block;}
+.pagehead .t .sep{margin:0 -.1em;}
+@media (max-width:520px){.pagehead .t .sep{display:none;}}
+.pagehead .s{font-size:clamp(12px,3vw,15px);color:#b8a8b4;margin-top:10px;line-height:1.9;}
+.stage{width:100%;overflow:hidden;margin:0 0 16px;}
+.stage .slide{transform-origin:top left;margin:0;}
+@media screen{
+  body.present{overflow:hidden;background:#1c1c22;}
+  body.present .page{padding:0;}
+  body.present .pagehead{display:none;}
+  body.present .stage{display:none;}
+  body.present .stage.on{display:block;position:fixed;left:0;top:0;right:0;bottom:0;
+    display:flex;align-items:center;justify-content:center;}
+}
+
+</style></head>
+<body>
+<div class="page">
+  <div class="pagehead">
+    <div class="t"><span class="u">おとな女子の夏期講習 DAY1</span><span class="u sep">｜</span><span class="u">ゲストトーク みちこさん</span></div>
+    <div class="s">2026.8.24（月）実施分／スライド3枚<br>パソコンは F キーで発表モード（&larr; &rarr; で送り・Esc で戻る）</div>
+  </div>
+<div class="stage">
+<!-- 00 表紙 -->
+<section class="slide">
+  <div class="dots" style="right:60px;top:60px"></div>
+  <div class="dots" style="left:50px;bottom:70px"></div>
+  <div class="blob pk" style="width:300px;height:300px;left:-120px;bottom:-130px"></div>
+  <div class="blob lv" style="width:260px;height:260px;right:-100px;bottom:120px"></div>
+  <div class="sp p" style="left:270px;top:300px;font-size:54px">&#10022;</div>
+  <div class="sp v" style="left:330px;top:370px;font-size:30px">&#10022;</div>
+  <div class="sp p" style="right:280px;top:330px;font-size:44px">&#10022;</div>
+  <div class="sp v" style="right:340px;top:250px;font-size:28px">&#10022;</div>
+  <div style="text-align:center;margin-top:170px">
+    <div class="eyebrow" style="margin-top:0">GUEST TALK</div>
+    <div style="font-family:'Noto Serif JP',serif;font-weight:600;font-size:40px;letter-spacing:.24em;text-indent:.24em;color:#8b8b99;margin-top:56px">おとな女子の夏期講習 DAY 1</div>
+    <div class="h1" style="font-size:92px;margin-top:30px">ゲストトーク<br>みちこさん</div>
+    <div class="cvdate" style="margin-top:56px">2026.8.24 MON ｜ 21:00 - 22:00</div>
+  </div>
+</section>
+</div>
+<div class="stage">
+<!-- 09 ゲストプロフィール --><section class="slide">
+  <div class="dots" style="right:60px;top:56px"></div>
+  <div class="blob lv" style="width:260px;height:260px;left:-100px;top:-100px"></div>
+  <div class="blob pk" style="width:300px;height:300px;right:-120px;bottom:-130px"></div>
+  <div class="sp p" style="left:120px;top:250px;font-size:44px">✦</div>
+  <div class="eyebrow">TODAY'S GUEST</div>
+  <div class="h1" style="font-size:64px">本日のゲスト｜みちこさん</div>
+  <div class="pwrap">
+    <div class="pcard"><img src="img/michiko.jpg" alt=""></div>
+    <div style="flex:1">
+      <div class="prow"><div class="plabel">お名前</div><div class="pval">斧本 美智子（みちこさん）</div></div>
+      <div class="prow"><div class="plabel">趣味</div><div class="pval">推し活・ぬい活・映画鑑賞</div></div>
+      <div class="prow"><div class="plabel">メルカリ歴</div><div class="pval"><b>4ヶ月</b></div></div>
+      <div class="prow"><div class="plabel">過去最高の売上</div><div class="pval"><b>¥123,133</b></div></div>
+      <div class="prow"><div class="plabel">平均の売上</div><div class="pval"><b>¥78,905</b></div></div>
+      <div class="pquote">「メルカリは、誰かの欲しい思いに応えて、<br>物と人を繋げる素敵なツールだと思っています」</div>
+    </div>
+  </div>
+</section>
+</div>
+<div class="stage">
+<!-- 10 インタビュー -->
+<section class="slide">
+  <div class="dots" style="left:56px;bottom:70px"></div>
+  <div class="blob pk" style="width:260px;height:260px;left:-100px;top:-110px"></div>
+  <div class="blob lv" style="width:260px;height:260px;right:-100px;bottom:-110px"></div>
+  <div class="eyebrow">INTERVIEW</div>
+  <div class="h1" style="font-size:66px">みちこさんに聞いてみます</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px 40px;padding:0 150px;margin-top:64px">
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:30px">メルカリを始めたきっかけ</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:30px">売れた意外な不用品</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:30px">お写真のこだわり</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:30px">最初の1品までにかかった時間</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:30px">お金以外に変わったこと</div></div>
+    <div class="card" style="display:flex;align-items:center;gap:26px;padding:26px 36px"><div class="ck">✓</div><div style="font-weight:500;font-size:30px">4ヶ月前のご自分にひと言</div></div>
+  </div>
+</section>
+</div>
+</div>
+<script>
+(function(){
+  var stages=[].slice.call(document.querySelectorAll('.stage'));
+  var i=0, present=false;
+  function fit(){
+    stages.forEach(function(st){
+      var sl=st.querySelector('.slide');
+      var w=present?Math.min(innerWidth/1536,innerHeight/1024):(st.clientWidth/1536);
+      sl.style.transform='scale('+w+')';
+      st.style.height=(1024*w)+'px';
+      if(present){ sl.style.transformOrigin='top left';
+        st.style.height='100%';
+        sl.style.position='absolute';
+        sl.style.left=((innerWidth-1536*w)/2)+'px';
+        sl.style.top=((innerHeight-1024*w)/2)+'px';
+      } else { sl.style.position='static'; }
+    });
+  }
+  function show(n){ i=Math.max(0,Math.min(stages.length-1,n));
+    stages.forEach(function(s,k){ s.classList.toggle('on',k===i); }); fit(); }
+  addEventListener('keydown',function(e){
+    if(e.key==='f'||e.key==='F'){ present=!present; document.body.classList.toggle('present',present); show(i); }
+    if(!present)return;
+    if(e.key==='ArrowRight'||e.key===' '||e.key==='ArrowDown')show(i+1);
+    if(e.key==='ArrowLeft'||e.key==='ArrowUp')show(i-1);
+    if(e.key==='Escape'){ present=false; document.body.classList.remove('present'); fit(); }
+  });
+  addEventListener('resize',fit);
+  addEventListener('load',fit);
+  fit();
+})();
+</script>
+</body></html>
